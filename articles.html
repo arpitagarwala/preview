@@ -94,11 +94,24 @@
     .modal-body ul li::before { content:'▸'; position:absolute; left:0; color:#22d3ee; font-size:0.75rem; top:0.2rem; }
     .modal-body .callout { background:rgba(34,211,238,0.06); border-left:3px solid #22d3ee; border-radius:0 0.5rem 0.5rem 0; padding:0.85rem 1rem; margin:1.25rem 0; }
     .modal-body .callout-warning { background:rgba(251,191,36,0.07); border-left-color:#fbbf24; }
+    .modal-body .callout-danger  { background:rgba(239,68,68,0.06); border-left-color:#ef4444; }
     .modal-body .verdict-box { background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.2); border-radius:0.75rem; padding:1rem 1.15rem; margin:1.25rem 0; }
     .modal-body .section-divider { height:1px; background:rgba(255,255,255,0.07); margin:1.5rem 0; }
     .dark .modal-body .section-divider { background:rgba(0,0,0,0.07); }
     .dark .modal-body .callout { background:rgba(8,145,178,0.06); border-left-color:#0891b2; }
+    .dark .modal-body .callout-warning { background:rgba(217,119,6,0.06); }
+    .dark .modal-body .callout-danger  { background:rgba(220,38,38,0.05); }
     .dark .modal-body .verdict-box { background:rgba(8,145,178,0.05); border-color:rgba(8,145,178,0.2); }
+    .modal-body .timeline-item { display:flex; gap:0.75rem; margin-bottom:1rem; }
+    .modal-body .timeline-dot  { flex-shrink:0; width:0.625rem; height:0.625rem; border-radius:50%; background:#22d3ee; margin-top:0.4rem; }
+    .dark .modal-body .timeline-dot { background:#0891b2; }
+    .modal-body .two-col { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:1rem 0; }
+    @media(max-width:560px){ .modal-body .two-col { grid-template-columns:1fr; } }
+    .modal-body .col-box { border-radius:0.5rem; padding:0.85rem 1rem; }
+    .modal-body .col-box-green  { background:rgba(34,197,94,0.07); border:1px solid rgba(34,197,94,0.2); }
+    .modal-body .col-box-red    { background:rgba(239,68,68,0.07); border:1px solid rgba(239,68,68,0.2); }
+    .dark .modal-body .col-box-green { background:rgba(22,163,74,0.05); }
+    .dark .modal-body .col-box-red   { background:rgba(220,38,38,0.05); }
 
     #no-results { display:none; }
     #no-results.visible { display:flex; }
@@ -128,7 +141,7 @@
 
     <div class="mb-5">
       <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-gray-900 tracking-tight mb-1">&#x1F4DD; Articles</h1>
-      <p class="text-slate-400 dark:text-gray-500 text-sm">In-depth writings on Finance, Taxation, and Investing.</p>
+      <p class="text-slate-400 dark:text-gray-500 text-sm">In-depth writings on Finance, Taxation, Business, and Investing.</p>
     </div>
 
     <div class="bg-slate-800 dark:bg-white rounded-xl border border-slate-700/50 dark:border-gray-200 p-3 sm:p-4 mb-5 shadow-sm">
@@ -152,6 +165,7 @@
         <span class="text-xs font-semibold text-slate-400 dark:text-gray-500 uppercase tracking-wider mr-1">Filter:</span>
         <button class="filter-pill active text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="all" onclick="setFilter(this, 'all')">All Articles</button>
         <button class="filter-pill text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="Taxation" onclick="setFilter(this, 'Taxation')"><i class="ri-scales-3-line mr-1"></i>Taxation</button>
+        <button class="filter-pill text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="Business" onclick="setFilter(this, 'Business')"><i class="ri-building-line mr-1"></i>Business</button>
         <span id="result-count" class="ml-auto text-xs text-slate-500 dark:text-gray-400 font-medium whitespace-nowrap"></span>
       </div>
     </div>
@@ -193,6 +207,168 @@
 
   <script>
     const ARTICLES = [
+      {
+        id: 2,
+        title: 'The Mumbai Airport Takeover: How Adani Acquired India\'s Second-Busiest Airport Amid Controversy',
+        date: 'March 2026',
+        category: 'Business',
+        categoryColor: 'amber',
+        icon: 'ri-flight-takeoff-line',
+        iconGradient: 'from-amber-500 to-orange-600',
+        readTime: 18,
+        summary: 'A Rs 13,000 crore debt crisis, investigative raids, jilted foreign investors, and a last-minute switch to Adani. How India\'s second-busiest airport changed hands in one of the most contentious infrastructure acquisitions in Indian history — and the questions that still linger.',
+        tags: ['Adani', 'Mumbai Airport', 'MIAL', 'Infrastructure', 'Privatisation'],
+        content: `
+          <div class="callout callout-warning">
+            <p class="text-xs font-semibold text-amber-400 dark:text-amber-600 mb-1 uppercase tracking-wide">&#9992; Key Facts at a Glance</p>
+            <p class="mb-1"><strong>Asset:</strong> Chhatrapati Shivaji Maharaj International Airport, Mumbai (MIAL)</p>
+            <p class="mb-1"><strong>Acquirer:</strong> Adani Airport Holdings Ltd (AAHL)</p>
+            <p class="mb-1"><strong>Stake acquired:</strong> 74% &nbsp;·&nbsp; <strong>AAI retained:</strong> 26%</p>
+            <p class="mb-0"><strong>Completed:</strong> February 2021 &nbsp;·&nbsp; <strong>GVK debt:</strong> ~&#8377;13,000 crore</p>
+          </div>
+
+          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">In February 2021, the Adani Group completed one of the most contentious acquisitions in Indian infrastructure history — gaining control of Mumbai’s Chhatrapati Shivaji Maharaj International Airport. What should have been a routine corporate transaction became a political flashpoint, with allegations of arm-twisting, regulatory pressure, and questions about how a group with <em>&#8220;no airport experience&#8221;</em> ended up controlling India’s second-busiest airport.</p>
+          <p class="text-slate-300 dark:text-gray-600">The story involves debt-ridden promoters, investigative agencies, jilted foreign investors, and a last-minute switch that left everyone asking: Was this a legitimate business rescue — or something more sinister?</p>
+
+          <div class="section-divider"></div>
+
+          <h3 class="text-slate-100 dark:text-gray-900">&#128200; When Things Started Going Wrong: The GVK Crisis</h3>
+          <p>The GVK Group, led by the Reddy family, held a commanding <strong class="text-slate-100 dark:text-gray-900">50.5% stake</strong> in Mumbai International Airport Limited (MIAL). They had been operating the airport since winning the privatisation bid years earlier. Mumbai airport was expanding, modernising, and handling tens of millions of passengers annually.</p>
+          <p>But beneath the surface, trouble was brewing. GVK was drowning in debt — over <strong class="text-slate-100 dark:text-gray-900">&#8377;13,000 crore</strong> — much of it from massive cost overruns during the airport’s development and expansion. By early 2020, GVK had already decided to sell. They’d found buyers: a prestigious consortium comprising <strong>Abu Dhabi Investment Authority (ADIA)</strong>, Canada’s <strong>PSP Investments</strong>, and India’s own <strong>National Investment and Infrastructure Fund (NIIF)</strong>. Documents were being drafted, and it seemed like GVK had found a lifeline. Then everything changed.</p>
+
+          <div class="section-divider"></div>
+
+          <h3 class="text-slate-100 dark:text-gray-900">&#128197; The Timeline: June – February</h3>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div><strong class="text-slate-200 dark:text-gray-800">June – July 2020:</strong> The CBI registers a case against GVK for alleged financial irregularities. The ED follows shortly after. The allegation: GVK had siphoned off <strong>&#8377;705 crore</strong> from MIAL — money belonging to the airport, allegedly diverted elsewhere in the group.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div><strong class="text-slate-200 dark:text-gray-800">August 2020:</strong> Barely two months after the raids, GVK makes a stunning announcement — they will now &#8220;cooperate&#8221; with the <strong>Adani Group</strong> instead of proceeding with the ADIA consortium. At this point, Adani’s airport portfolio consisted of six recently won bids (Ahmedabad, Lucknow, Mangaluru, Jaipur, Guwahati, Thiruvananthapuram) — none yet operational.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div><strong class="text-slate-200 dark:text-gray-800">Phase 1:</strong> Adani Airport Holdings Ltd (AAHL) acquires the <em>debt</em> of GVK Airport Developers Ltd — the entity holding the 50.5% stake in MIAL. By buying the debt, Adani effectively gained leverage over GVK’s decision-making.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div><strong class="text-slate-200 dark:text-gray-800">Phase 2:</strong> Adani buys out minority foreign partners — <strong>13.5%</strong> from South Africa’s Bidvest and <strong>10%</strong> from ACSA (Airports Company South Africa).</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#f59e0b"></div>
+            <div><strong class="text-slate-200 dark:text-gray-800">February 2021:</strong> Adani controls <strong>74% of MIAL</strong> (50.5% from GVK + 23.5% from minority partners). AAI retains 26%. Bonus: the deal includes control of the upcoming <strong>Navi Mumbai International Airport</strong>.</div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <h3 class="text-slate-100 dark:text-gray-900">&#9876; The Allegations: Was This a Hijack?</h3>
+          <p>Opposition leaders — particularly Congress MP Rahul Gandhi — didn’t mince words, using the term <em>&#8220;hijacking&#8221;</em> of a strategic national asset in Parliament. The allegations fell into four categories:</p>
+
+          <h3 class="text-slate-100 dark:text-gray-900" style="margin-top:1rem">1 &nbsp;·&nbsp; Agency Pressure as Leverage</h3>
+          <div class="callout callout-danger">
+            <p class="text-xs font-semibold text-red-400 dark:text-red-600 mb-1 uppercase tracking-wide">&#9888; The Timing Argument</p>
+            <p class="mb-0">Investigative agencies launch cases in <strong>June–July 2020</strong>. GVK abandons a carefully negotiated deal with reputable foreign investors and switches to Adani by <strong>August 2020</strong> — within two months. Critics argued this wasn’t a business decision; it was coercion.</p>
+          </div>
+
+          <h3 class="text-slate-100 dark:text-gray-900" style="margin-top:1rem">2 &nbsp;·&nbsp; Breach of Existing Agreements</h3>
+          <p>The jilted ADIA–PSP–NIIF consortium wasn’t going quietly. They protested, claiming that GVK’s pivot violated their agreement — which included a <strong>Right of First Refusal</strong> clause. If GVK was selling to someone else, the consortium should have been given the first opportunity to match the offer. Instead, they were unceremoniously dropped.</p>
+
+          <h3 class="text-slate-100 dark:text-gray-900" style="margin-top:1rem">3 &nbsp;·&nbsp; Convenient Rule Changes</h3>
+          <p>Reports emerged that the government had changed privatisation rules for airports, <strong>removing requirements for prior airport operating experience</strong>. Previously, bidders needed to demonstrate experience in managing airports. The rule change meant that entities like Adani — with virtually no operational airport experience at the time — could suddenly bid for and win control of major airports. NITI Aayog had reportedly recommended <em>against</em> awarding six airports to an inexperienced operator. Those recommendations were apparently ignored.</p>
+
+          <h3 class="text-slate-100 dark:text-gray-900" style="margin-top:1rem">4 &nbsp;·&nbsp; Undervalued Asset Sales</h3>
+          <p><em>The Hindu</em> reported allegations that AAI assets worth <strong>&#8377;1,300 crore</strong> at three airports were sold to Adani for just <strong>&#8377;500 crore</strong> — a massive potential value destruction for the government-owned entity.</p>
+
+          <div class="section-divider"></div>
+
+          <h3 class="text-slate-100 dark:text-gray-900">&#128075; The Defense: GVK’s Official Position</h3>
+          <p>Sanjay Reddy, representing the GVK Group, was unequivocal: <em>&#8220;There was no extraneous pressure to sell. No pressure from the Adani Group.&#8221;</em></p>
+          <p>His argument was straightforward: GVK was buried in &#8377;13,000 crore of debt. They needed to sell to survive. The decision to go with Adani was a <em>&#8220;business imperative&#8221;</em> driven purely by debt management needs. When you owe that much and investigative agencies are circling, your negotiating position isn’t exactly strong — you take the best available deal, and you take it quickly. Whether the &#8220;best available deal&#8221; materialised because of market forces or other pressures is precisely where opinions diverge sharply.</p>
+
+          <div class="section-divider"></div>
+
+          <h3 class="text-slate-100 dark:text-gray-900">&#9992; What Actually Changed: Life After Adani</h3>
+
+          <h3 class="text-slate-100 dark:text-gray-900" style="margin-top:1rem">Operational Strategy Shift</h3>
+          <p>Adani didn’t just want to run the airport — they wanted to fundamentally change how it made money. The group shifted strategy toward maximising <strong>non-aeronautical revenue</strong>: instead of leasing retail and F&B space to third parties, they began directly owning and operating these businesses. This is Airport Business 101 — landing fees and passenger charges are regulated and capped; the real money is in retail, food, advertising, and parking.</p>
+
+          <h3 class="text-slate-100 dark:text-gray-900" style="margin-top:1rem">The Navi Mumbai Bonus</h3>
+          <p>Control of MIAL came with a significant sweetener: the upcoming <strong>Navi Mumbai International Airport</strong> project. This gave Adani not one but two major airports in India’s financial capital, with the ability to coordinate operations and potentially influence pricing across both facilities — an extraordinary position for a group that entered the airport business in 2019.</p>
+
+          <h3 class="text-slate-100 dark:text-gray-900" style="margin-top:1rem">Adani’s Airport Empire by 2021</h3>
+          <ul>
+            <li><strong class="text-slate-200 dark:text-gray-800">Mumbai</strong> — India’s second-busiest</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">Ahmedabad, Lucknow, Mangaluru, Jaipur, Guwahati, Thiruvananthapuram</strong> — won via PPP bids</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">Navi Mumbai</strong> — under development</li>
+          </ul>
+          <p>This rapid consolidation made Adani India’s largest private airport operator — in under two years.</p>
+
+          <div class="section-divider"></div>
+
+          <h3 class="text-slate-100 dark:text-gray-900">&#9878; Two Narratives, Same Facts</h3>
+
+          <div class="two-col">
+            <div class="col-box col-box-green">
+              <p class="text-xs font-bold text-green-400 dark:text-green-700 uppercase tracking-wide mb-2">&#9989; The Supporters’ View</p>
+              <p class="mb-1">GVK made poor business decisions and couldn’t manage its finances.</p>
+              <p class="mb-1">When they violated regulations, agencies properly initiated cases.</p>
+              <p class="mb-1">Adani provided capital and rescued a failing enterprise.</p>
+              <p class="mb-0">Result: a market-driven rescue, not a coup.</p>
+            </div>
+            <div class="col-box col-box-red">
+              <p class="text-xs font-bold text-red-400 dark:text-red-700 uppercase tracking-wide mb-2">&#10060; The Critics’ View</p>
+              <p class="mb-1">Timing of agency action was too convenient to be coincidental.</p>
+              <p class="mb-1">A reputable foreign consortium was displaced without explanation.</p>
+              <p class="mb-1">Experience rules were changed just as Adani entered the sector.</p>
+              <p class="mb-0">Result: regulatory capture and crony capitalism.</p>
+            </div>
+          </div>
+
+          <div class="section-divider"></div>
+
+          <h3 class="text-slate-100 dark:text-gray-900">&#10067; The Questions That Remain</h3>
+          <ul>
+            <li><strong class="text-slate-200 dark:text-gray-800">Why did the ADIA consortium fail?</strong> These are sophisticated, deep-pocketed investors. Was it purely about price, or were there other factors at play?</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">What happened to the CBI/ED cases?</strong> If &#8377;705 crore was siphoned from MIAL, what is the current status? Were charges filed? Did anyone face consequences?</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">Why change the experience requirements?</strong> What was the policy rationale for removing airport operating experience as a bidding criterion, precisely when Adani was entering the sector?</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">Were the valuations fair?</strong> If AAI assets were indeed sold below market value, who authorised this and why?</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">Is concentration a concern?</strong> Should one private entity control this many strategic airports in a country of 1.4 billion people?</li>
+          </ul>
+
+          <div class="section-divider"></div>
+
+          <h3 class="text-slate-100 dark:text-gray-900">&#128161; Lessons for Business Observers</h3>
+          <ul>
+            <li><strong class="text-slate-200 dark:text-gray-800">Politics and infrastructure are inseparable in India.</strong> Major deals don’t happen in a vacuum — they happen in a complex ecosystem of regulatory approvals, government relationships, and political dynamics.</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">Financial distress creates vulnerability.</strong> When companies are overleveraged and facing investigative scrutiny, their negotiating power evaporates. They become forced sellers, often at unfavourable terms.</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">Capital and connections beat first-mover advantage.</strong> Adani entered the airport business after many others but leapfrogged them all through aggressive acquisitions and apparently favourable regulatory treatment.</li>
+            <li><strong class="text-slate-200 dark:text-gray-800">Institutional investors can’t always compete with domestic players</strong> who understand the local political-regulatory landscape better.</li>
+          </ul>
+
+          <div class="verdict-box">
+            <p class="text-xs font-bold text-cyan-400 dark:text-cyan-600 uppercase tracking-wider mb-2">&#9878; The Honest Answer</p>
+            <p class="mb-2">Was the Adani acquisition of Mumbai airport a legitimate business transaction or a case of regulatory muscle being used to favour a connected business group? We may never know with certainty. What’s undeniable is that the deal transformed India’s airport landscape, concentrated significant infrastructure in one group’s hands, and created a template that may be repeated with other strategic assets.</p>
+            <p class="mb-0 text-slate-400 dark:text-gray-500 text-xs">Whether that’s good or bad for India’s economy and its citizens remains hotly debated.</p>
+          </div>
+
+          <div class="callout" style="margin-top:1.5rem">
+            <p class="text-xs font-semibold text-cyan-400 dark:text-cyan-600 mb-2 uppercase tracking-wide">&#128220; Key References</p>
+            <ul style="margin:0; padding:0; list-style:none;">
+              <li style="padding-left:0; margin-bottom:0.3rem;">GVK–Adani Cooperation Agreement &mdash; August 2020</li>
+              <li style="padding-left:0; margin-bottom:0.3rem;">CBI / ED Cases against GVK &mdash; June–July 2020</li>
+              <li style="padding-left:0; margin-bottom:0.3rem;">MIAL Stake Acquisition &mdash; February 2021</li>
+              <li style="padding-left:0;">Parliamentary Questions on Airport Privatisation &mdash; 2020–2021</li>
+            </ul>
+          </div>
+
+          <div class="callout callout-warning" style="margin-top:1rem">
+            <p class="text-xs font-semibold text-amber-400 dark:text-amber-600 mb-1 uppercase tracking-wide">Disclaimer</p>
+            <p class="mb-0 text-slate-400 dark:text-gray-500">This article presents multiple perspectives on a controversial business transaction. The views expressed by various stakeholders are reported for informational purposes. Readers should conduct their own research and form their own conclusions.</p>
+          </div>
+        `
+      },
       {
         id: 1,
         title: 'When Smart Tax Planning Meets Stubborn Tax Officers: The Kavita Damani Saga',
@@ -330,6 +506,7 @@
 
     const CATEGORY_BADGE = {
       'Taxation': 'bg-cyan-900/40 text-cyan-300 dark:bg-cyan-100 dark:text-cyan-700',
+      'Business': 'bg-amber-900/40 text-amber-300 dark:bg-amber-100 dark:text-amber-700',
     };
 
     let activeCategory = 'all';
