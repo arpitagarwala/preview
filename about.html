@@ -1,68 +1,419 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ═══ Primary SEO ═══ -->
-  <title>About Arpit Agarwala – BCom Student, CA Aspirant & Web Creator from Kolkata</title>
-  <meta name="description" content="Learn more about Arpit Agarwala – a BCom (Hons) student, CA aspirant and digital creator from Kolkata who builds finance tools, web apps, and interactive experiences." />
-  <meta name="keywords" content="Arpit Agarwala about, BCom Hons, CA aspirant, Kolkata student, BlueCave, web creator, finance student" />
-  <meta name="author" content="Arpit Agarwala" />
-  <link rel="canonical" href="https://arpitagarwala.online/about.html" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- ═══ Open Graph ═══ -->
-  <meta property="og:type" content="profile" />
-  <meta property="og:url" content="https://arpitagarwala.online/about.html" />
-  <meta property="og:title" content="About Arpit Agarwala – BCom Student & CA Aspirant" />
-  <meta property="og:description" content="BCom (Hons) student, CA aspirant and digital creator from Kolkata building finance tools and web experiences." />
-  <meta property="og:image" content="https://arpitagarwala.online/assets/images/my-miniature.png" />
-  <meta property="og:site_name" content="Arpit Agarwala" />
-
-  <!-- ═══ Twitter Card ═══ -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About Arpit Agarwala" />
-  <meta name="twitter:description" content="BCom (Hons) student, CA aspirant and digital creator from Kolkata." />
-  <meta name="twitter:image" content="https://arpitagarwala.online/assets/images/my-miniature.png" />
-
-  <!-- ═══ JSON-LD ═══ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Arpit Agarwala",
-      "url": "https://arpitagarwala.online/",
-      "jobTitle": "BCom Student & CA Aspirant",
-      "description": "BCom (Hons) student and aspiring Chartered Accountant from Kolkata, founder of BlueCave, passionate about finance, web development and digital tools.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kolkata",
-        "addressRegion": "West Bengal",
-        "addressCountry": "IN"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/arpitagarwala/",
-        "https://www.instagram.com/arpit.agarwala_/",
-        "https://github.com/arpitagarwala"
-      ]
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – Arpit Agarwala</title>
+    <meta name="description" content="About Arpit Agarwala – BCom (Hons) student, CA Intermediate aspirant, web creator and operations intern from Kolkata." />
+    <meta name="keywords" content="Arpit Agarwala about, BCom Hons, CA aspirant, Kolkata student, web creator, finance student" />
+    <meta name="author" content="Arpit Agarwala" />
+    <link rel="canonical" href="https://arpitagarwala.online/about.html" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://arpitagarwala.online/about.html" />
+    <meta property="og:title" content="About Arpit Agarwala" />
+    <meta property="og:description" content="BCom (Hons) student, CA aspirant and digital creator from Kolkata." />
+    <meta property="og:image" content="https://arpitagarwala.online/assets/images/my-miniature.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Arpit Agarwala" />
+    <meta name="twitter:image" content="https://arpitagarwala.online/assets/images/my-miniature.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Arpit Agarwala",
+        "url": "https://arpitagarwala.online/",
+        "jobTitle": "BCom Student & CA Aspirant",
+        "address": { "@type": "PostalAddress", "addressLocality": "Kolkata", "addressRegion": "West Bengal", "addressCountry": "IN" },
+        "sameAs": ["https://www.linkedin.com/in/arpitagarwala/","https://www.instagram.com/arpit.agarwala_/","https://github.com/arpitagarwala"]
+      }
     }
-  }
-  </script>
+    </script>
+    <link rel="icon" type="image/png" href="assets/images/tab-icon.png">
+    <script>
+      (function () {
+        const t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches))
+          document.documentElement.classList.add('dark');
+      })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      body { font-family: 'Inter', sans-serif; }
 
-  <link rel="icon" type="image/png" href="assets/images/tab-icon.png">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body class="page-dark">
-  <div class="container">
-    <h1>Hey, I'm Arpit 👋</h1>
-    <p>I'm a BCom (Hons) student, aspiring Chartered Accountant, and a passionate creator of digital projects.
-    <br>I blend creativity, finance, and technology into practical experiences like my startup <strong>BlueCave</strong>, custom mini games, and modern web tools.</p>
-    <p>This portfolio is a miniature world representing everything I enjoy — neat, fun, and full of possibilities.✨</p>
-    <a href="index.html" class="back-link">← Back to Home</a>
-  </div>
-</body>
+      .card {
+        background: rgb(17,24,39);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 1.15rem;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      }
+      .dark .card { background: #ffffff; border-color: rgb(229,231,235); }
+
+      /* Timeline */
+      .tl-line {
+        position: absolute;
+        left: 1.05rem;
+        top: 0.4rem; bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, rgba(34,211,238,0.35), rgba(34,211,238,0.03));
+      }
+      .tl-dot {
+        width: 0.6rem; height: 0.6rem;
+        border-radius: 50%;
+        background: rgb(34,211,238);
+        flex-shrink: 0;
+        margin-top: 0.35rem;
+        box-shadow: 0 0 7px rgba(34,211,238,0.5);
+      }
+      .tl-dot-amber {
+        background: rgb(251,191,36);
+        box-shadow: 0 0 7px rgba(251,191,36,0.45);
+      }
+
+      /* Skill bars */
+      .bar-track {
+        height: 5px; border-radius: 99px;
+        background: rgba(255,255,255,0.06); overflow: hidden;
+      }
+      .dark .bar-track { background: rgba(0,0,0,0.07); }
+      .bar-fill {
+        height: 100%; border-radius: 99px;
+        background: linear-gradient(90deg, rgb(34,211,238), rgb(99,102,241));
+        transform-origin: left;
+        animation: growBar 1.1s ease forwards;
+        transform: scaleX(0);
+      }
+      @keyframes growBar { to { transform: scaleX(1); } }
+
+      /* stat mini cards */
+      .stat {
+        background: rgba(34,211,238,0.04);
+        border: 1px solid rgba(34,211,238,0.11);
+        border-radius: 0.8rem;
+        padding: 1rem 0.75rem;
+        text-align: center;
+      }
+      .dark .stat { background: rgba(8,145,178,0.04); border-color: rgba(8,145,178,0.11); }
+
+      .back-btn { transition: color 0.15s; }
+      .back-btn:hover { color: rgb(34,211,238); }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-[#080c14] dark:bg-slate-100 text-slate-100 dark:text-gray-900 transition-colors duration-300 py-10 px-4">
+
+    <!-- Theme toggle -->
+    <div class="fixed top-4 right-4 z-50">
+      <button onclick="toggleTheme()" class="w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 dark:bg-white text-slate-300 dark:text-gray-600 border border-slate-700 dark:border-gray-200 shadow-xl hover:scale-110 transition-all duration-200">
+        <i id="theme-icon" class="ri-sun-line text-xl"></i>
+      </button>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Header -->
+      <div class="mb-7">
+        <a href="index.html" class="back-btn inline-flex items-center gap-1.5 text-sm text-slate-500 dark:text-gray-400 mb-5">
+          <i class="ri-arrow-left-line"></i> Back to Home
+        </a>
+        <h1 class="text-3xl font-extrabold text-white dark:text-gray-900">About Me</h1>
+        <p class="text-slate-400 dark:text-gray-500 text-sm mt-1">The story, the mission, the skillset.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+        <!-- LEFT COLUMN -->
+        <div class="flex flex-col gap-4">
+
+          <!-- Profile card -->
+          <div class="card p-6 relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="flex flex-col items-center text-center">
+              <img src="assets/images/my-miniature.png" alt="Arpit Agarwala"
+                   class="w-28 drop-shadow-[0_10px_24px_rgba(0,0,0,0.6)] mb-4" />
+              <h2 class="text-xl font-extrabold text-white dark:text-gray-900">Arpit Agarwala</h2>
+              <p class="text-xs text-cyan-400 dark:text-cyan-600 font-semibold mt-1 mb-3 tracking-wide">BCom (Hons) · CA Intermediate</p>
+              <div class="flex flex-wrap justify-center gap-1.5 mb-4">
+                <span class="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 dark:bg-cyan-50 dark:text-cyan-600 font-semibold">
+                  <i class="ri-map-pin-line"></i> Kolkata, India
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 dark:bg-emerald-50 dark:text-emerald-600 font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Available
+                </span>
+              </div>
+              <p class="text-xs text-slate-400 dark:text-gray-500 leading-relaxed">
+                Born in Rajasthan, raised in Assam, building in Kolkata.
+                Bridging finance, technology and leadership.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="card p-5">
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-3">At a Glance</p>
+            <div class="grid grid-cols-2 gap-2">
+              <div class="stat">
+                <p class="text-xl font-black text-cyan-400 dark:text-cyan-600">2+</p>
+                <p class="text-[10px] text-slate-500 dark:text-gray-400 mt-0.5 font-medium">Internships</p>
+              </div>
+              <div class="stat">
+                <p class="text-xl font-black text-cyan-400 dark:text-cyan-600">40+</p>
+                <p class="text-[10px] text-slate-500 dark:text-gray-400 mt-0.5 font-medium">Students Mentored</p>
+              </div>
+              <div class="stat">
+                <p class="text-xl font-black text-cyan-400 dark:text-cyan-600">₹10k+</p>
+                <p class="text-[10px] text-slate-500 dark:text-gray-400 mt-0.5 font-medium">Revenue Generated</p>
+              </div>
+              <div class="stat">
+                <p class="text-xl font-black text-cyan-400 dark:text-cyan-600">CA</p>
+                <p class="text-[10px] text-slate-500 dark:text-gray-400 mt-0.5 font-medium">Foundation Cleared</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connect -->
+          <div class="card p-5">
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-3">Connect</p>
+            <div class="flex flex-col gap-1">
+              <a href="mailto:arpitagarwalms@gmail.com"
+                 class="flex items-center gap-3 px-2.5 py-2 rounded-xl hover:bg-white/[0.04] dark:hover:bg-black/[0.03] transition-colors group">
+                <i class="ri-mail-send-line text-cyan-400 dark:text-cyan-500"></i>
+                <span class="text-xs font-medium text-slate-300 dark:text-gray-600 group-hover:text-white dark:group-hover:text-gray-900 transition-colors truncate">arpitagarwalms@gmail.com</span>
+              </a>
+              <a href="https://www.linkedin.com/in/arpitagarwala/" target="_blank" rel="noopener"
+                 class="flex items-center gap-3 px-2.5 py-2 rounded-xl hover:bg-white/[0.04] dark:hover:bg-black/[0.03] transition-colors group">
+                <i class="ri-linkedin-line text-blue-400 dark:text-blue-500"></i>
+                <span class="text-xs font-medium text-slate-300 dark:text-gray-600 group-hover:text-white dark:group-hover:text-gray-900 transition-colors">linkedin.com/in/arpitagarwala</span>
+              </a>
+              <a href="https://github.com/arpitagarwala" target="_blank" rel="noopener"
+                 class="flex items-center gap-3 px-2.5 py-2 rounded-xl hover:bg-white/[0.04] dark:hover:bg-black/[0.03] transition-colors group">
+                <i class="ri-github-line text-slate-300 dark:text-gray-600"></i>
+                <span class="text-xs font-medium text-slate-300 dark:text-gray-600 group-hover:text-white dark:group-hover:text-gray-900 transition-colors">github.com/arpitagarwala</span>
+              </a>
+              <a href="https://www.instagram.com/arpit.agarwala_/" target="_blank" rel="noopener"
+                 class="flex items-center gap-3 px-2.5 py-2 rounded-xl hover:bg-white/[0.04] dark:hover:bg-black/[0.03] transition-colors group">
+                <i class="ri-instagram-line text-pink-400 dark:text-pink-500"></i>
+                <span class="text-xs font-medium text-slate-300 dark:text-gray-600 group-hover:text-white dark:group-hover:text-gray-900 transition-colors">arpit.agarwala_</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <!-- end left col -->
+
+        <!-- RIGHT COLUMN -->
+        <div class="lg:col-span-2 flex flex-col gap-4">
+
+          <!-- Bio -->
+          <div class="card p-6">
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-3">Who I Am</p>
+            <p class="text-sm text-slate-300 dark:text-gray-600 leading-relaxed mb-3">
+              I’m a <strong class="text-slate-100 dark:text-gray-900">BCom (Hons) student at Bhawanipur Education Society College</strong> and a
+              <strong class="text-slate-100 dark:text-gray-900">CA Intermediate candidate</strong> — on a focused mission to become a Chartered Accountant while building real-world tools at the intersection of finance and technology.
+            </p>
+            <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed mb-3">
+              Having cleared the <strong class="text-cyan-400 dark:text-cyan-600">CA Foundation exam (Dec 2023)</strong>, I’m now deep in CA Intermediate preparation — running a structured high-intensity revision system built around Pareto analysis, speed learning, and zero-distraction focus blocks.
+            </p>
+            <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed">
+              Outside the books, I build web tools, analyse markets using SMC/ICT methodology, automate workflows in Excel, and train 6 days a week. My edge is the ability to bridge analytical rigour with practical execution.
+            </p>
+          </div>
+
+          <!-- Experience Timeline -->
+          <div class="card p-6">
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-5">Experience</p>
+            <div class="relative pl-8">
+              <div class="tl-line"></div>
+
+              <!-- House of AC -->
+              <div class="relative mb-7">
+                <div class="absolute -left-8 top-1"><div class="tl-dot"></div></div>
+                <div class="flex flex-wrap items-start justify-between gap-1 mb-1">
+                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">Operations Management Intern</p>
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-700/60 dark:bg-gray-100 text-slate-400 dark:text-gray-500">May – Jul 2024</span>
+                </div>
+                <p class="text-xs text-cyan-400 dark:text-cyan-600 font-semibold mb-2">House of AC · Kolkata</p>
+                <ul class="space-y-1.5 text-xs text-slate-400 dark:text-gray-500 leading-relaxed">
+                  <li class="flex gap-2"><span class="text-cyan-500/50 shrink-0 mt-0.5">▸</span>Built automated invoicing system bridging HR and IT workflows, saving significant manual time</li>
+                  <li class="flex gap-2"><span class="text-cyan-500/50 shrink-0 mt-0.5">▸</span>Designed master product sheet with auto-generated unique IDs and duplicate prevention logic</li>
+                  <li class="flex gap-2"><span class="text-cyan-500/50 shrink-0 mt-0.5">▸</span>Integrated inventory system with purchase/sales automation and low-stock alert triggers</li>
+                </ul>
+              </div>
+
+              <!-- Younity.in -->
+              <div class="relative mb-7">
+                <div class="absolute -left-8 top-1"><div class="tl-dot"></div></div>
+                <div class="flex flex-wrap items-start justify-between gap-1 mb-1">
+                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">Business Development & Research Intern</p>
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-700/60 dark:bg-gray-100 text-slate-400 dark:text-gray-500">May – Sep 2023</span>
+                </div>
+                <p class="text-xs text-cyan-400 dark:text-cyan-600 font-semibold mb-2">Younity.in · Remote</p>
+                <ul class="space-y-1.5 text-xs text-slate-400 dark:text-gray-500 leading-relaxed">
+                  <li class="flex gap-2"><span class="text-cyan-500/50 shrink-0 mt-0.5">▸</span>Created marketing strategies and led promotions for a 50,000+ learner online platform</li>
+                  <li class="flex gap-2"><span class="text-cyan-500/50 shrink-0 mt-0.5">▸</span>Generated ₹10k+ revenue in Month 1 — surpassing 80% of all teammates</li>
+                  <li class="flex gap-2"><span class="text-cyan-500/50 shrink-0 mt-0.5">▸</span>Tenure extended an additional 3 months for exceptional contribution</li>
+                </ul>
+              </div>
+
+              <!-- Head Boy -->
+              <div class="relative">
+                <div class="absolute -left-8 top-1"><div class="tl-dot tl-dot-amber"></div></div>
+                <div class="flex flex-wrap items-start justify-between gap-1 mb-1">
+                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">Head Boy & IT Club Founder</p>
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-700/60 dark:bg-gray-100 text-slate-400 dark:text-gray-500">Apr 2022 – Apr 2023</span>
+                </div>
+                <p class="text-xs text-amber-400 dark:text-amber-600 font-semibold mb-2">LK Singhania Education Centre · Rajasthan</p>
+                <ul class="space-y-1.5 text-xs text-slate-400 dark:text-gray-500 leading-relaxed">
+                  <li class="flex gap-2"><span class="text-amber-500/50 shrink-0 mt-0.5">▸</span>Founded school IT Club — designed and ran workshops for 40+ students</li>
+                  <li class="flex gap-2"><span class="text-amber-500/50 shrink-0 mt-0.5">▸</span>Covered Photoshop, Premiere Pro, Figma, Photography, Arduino, and Coding</li>
+                  <li class="flex gap-2"><span class="text-amber-500/50 shrink-0 mt-0.5">▸</span>Led coordination for national and international online conferences</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="card p-6">
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-4">Education</p>
+            <div class="flex flex-col gap-4">
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-cyan-500/10 dark:bg-cyan-50 flex items-center justify-center shrink-0">
+                  <i class="ri-building-line text-cyan-400 dark:text-cyan-600"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">Chartered Accountant — CA Intermediate</p>
+                  <p class="text-xs text-cyan-400 dark:text-cyan-600 font-semibold">ICAI · 2023 – 2028</p>
+                  <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Foundation cleared Dec 2023 · Currently preparing for Intermediate</p>
+                </div>
+              </div>
+
+              <div class="h-px bg-slate-700/40 dark:bg-gray-200 ml-12"></div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-violet-500/10 dark:bg-violet-50 flex items-center justify-center shrink-0">
+                  <i class="ri-graduation-cap-line text-violet-400 dark:text-violet-600"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">BCom (Hons)</p>
+                  <p class="text-xs text-violet-400 dark:text-violet-600 font-semibold">Bhawanipur Education Society College · 2023 – 2027</p>
+                  <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Commerce · Kolkata, West Bengal</p>
+                </div>
+              </div>
+
+              <div class="h-px bg-slate-700/40 dark:bg-gray-200 ml-12"></div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-amber-500/10 dark:bg-amber-50 flex items-center justify-center shrink-0">
+                  <i class="ri-book-open-line text-amber-400 dark:text-amber-600"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">Class XII — Commerce</p>
+                  <p class="text-xs text-amber-400 dark:text-amber-600 font-semibold">LK Singhania Education Centre · 2018 – 2023</p>
+                  <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Rajasthan</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="card p-6">
+            <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-4">Skills & Expertise</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-5">
+
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-xs font-semibold text-slate-300 dark:text-gray-700">Financial Analysis</span>
+                  <span class="text-[10px] text-slate-500">90%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" style="width:90%;animation-delay:0.1s"></div></div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-xs font-semibold text-slate-300 dark:text-gray-700">Excel & Automation</span>
+                  <span class="text-[10px] text-slate-500">88%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" style="width:88%;animation-delay:0.2s"></div></div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-xs font-semibold text-slate-300 dark:text-gray-700">Web Design (Figma / HTML / CSS)</span>
+                  <span class="text-[10px] text-slate-500">82%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" style="width:82%;animation-delay:0.3s"></div></div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-xs font-semibold text-slate-300 dark:text-gray-700">Operations Management</span>
+                  <span class="text-[10px] text-slate-500">80%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" style="width:80%;animation-delay:0.4s"></div></div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-xs font-semibold text-slate-300 dark:text-gray-700">Stock Market (SMC / ICT)</span>
+                  <span class="text-[10px] text-slate-500">75%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" style="width:75%;animation-delay:0.5s"></div></div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1.5">
+                  <span class="text-xs font-semibold text-slate-300 dark:text-gray-700">Communication & Leadership</span>
+                  <span class="text-[10px] text-slate-500">85%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill" style="width:85%;animation-delay:0.6s"></div></div>
+              </div>
+
+            </div>
+
+            <!-- Tag cloud -->
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-cyan-500/5 border-cyan-500/15 text-cyan-400 dark:text-cyan-600">Accountancy</span>
+              <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-violet-500/5 border-violet-500/15 text-violet-400 dark:text-violet-600">Front-End Dev</span>
+              <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-amber-500/5 border-amber-500/15 text-amber-400 dark:text-amber-600">Market Analysis</span>
+              <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-emerald-500/5 border-emerald-500/15 text-emerald-400 dark:text-emerald-600">Automation</span>
+              <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-pink-500/5 border-pink-500/15 text-pink-400 dark:text-pink-600">Photo & Video Editing</span>
+              <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-orange-500/5 border-orange-500/15 text-orange-400 dark:text-orange-600">Business Development</span>
+              <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-slate-500/10 border-slate-500/20 text-slate-400 dark:text-gray-500">Leadership</span>
+              <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full border bg-teal-500/5 border-teal-500/15 text-teal-400 dark:text-teal-600">Workshop Facilitation</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- end right col -->
+
+      </div>
+
+      <!-- Footer -->
+      <div class="mt-4 text-center py-3.5 px-6 rounded-2xl bg-slate-800/50 dark:bg-white border border-slate-700/30 dark:border-gray-200 text-sm text-slate-500 dark:text-gray-400">
+        &copy; 2026 Arpit Agarwala. Engineered with <span class="text-red-400">&#10084;&#65039;</span>
+      </div>
+
+    </div>
+
+    <script>
+      function syncIcon() {
+        document.getElementById('theme-icon').className =
+          document.documentElement.classList.contains('dark') ? 'ri-sun-line text-xl' : 'ri-moon-line text-xl';
+      }
+      syncIcon();
+      function toggleTheme() {
+        document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        syncIcon();
+      }
+    </script>
+  </body>
 </html>
