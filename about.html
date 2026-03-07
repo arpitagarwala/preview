@@ -31,7 +31,10 @@
       }
     }
     </script>
-    <link rel="icon" type="image/png" href="assets/images/tab-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_32,h_32,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_16,h_16,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_180,h_180,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_32,h_32,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
     <script>
       (function () {
         const t = localStorage.getItem('theme');
@@ -64,14 +67,12 @@
 
   <body class="min-h-screen bg-[#080c14] dark:bg-slate-100 text-slate-100 dark:text-gray-900 transition-colors duration-300 py-10 px-4">
 
-    <!-- Back Button (uniform: fixed circle, top-left) -->
     <div class="fixed top-3 left-3 z-50">
       <a href="index.html" class="bg-slate-700 dark:bg-white text-slate-200 dark:text-gray-700 p-1.5 rounded-full shadow-md inline-flex items-center border border-slate-600 dark:border-gray-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-lg transition-all duration-100">
         <i class="ri-arrow-left-line text-lg"></i>
       </a>
     </div>
 
-    <!-- Theme Toggle -->
     <div class="fixed top-3 right-3 z-50">
       <button onclick="toggleTheme()" class="bg-slate-700 dark:bg-white text-slate-200 dark:text-gray-700 p-1.5 rounded-full shadow-md border border-slate-600 dark:border-gray-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-lg transition-all duration-100">
         <i id="theme-icon" class="ri-sun-line text-lg"></i>
@@ -80,7 +81,6 @@
 
     <div class="max-w-5xl mx-auto pt-10">
 
-      <!-- Page heading -->
       <div class="mb-7">
         <h1 class="text-3xl font-extrabold text-white dark:text-gray-900">About Me</h1>
         <p class="text-slate-400 dark:text-gray-500 text-sm mt-1">The story, the mission, the skillset.</p>
@@ -88,10 +88,8 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-        <!-- LEFT COLUMN -->
         <div class="flex flex-col gap-4">
 
-          <!-- Profile card -->
           <div class="card p-6 relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
             <div class="flex flex-col items-center text-center">
@@ -106,7 +104,6 @@
             </div>
           </div>
 
-          <!-- Stats -->
           <div class="card p-5">
             <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-3">At a Glance</p>
             <div class="grid grid-cols-2 gap-2">
@@ -117,7 +114,6 @@
             </div>
           </div>
 
-          <!-- Connect -->
           <div class="card p-5">
             <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-3">Connect</p>
             <div class="flex flex-col gap-0.5">
@@ -146,18 +142,15 @@
 
         </div>
 
-        <!-- RIGHT COLUMN -->
         <div class="lg:col-span-2 flex flex-col gap-4">
 
-          <!-- Bio -->
           <div class="card p-6">
             <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-3">Who I Am</p>
-            <p class="text-sm text-slate-300 dark:text-gray-600 leading-relaxed mb-3">I’m a <strong class="text-slate-100 dark:text-gray-900">BCom (Hons) student at Bhawanipur Education Society College</strong> and a <strong class="text-slate-100 dark:text-gray-900">CA Intermediate candidate</strong> — on a focused mission to become a Chartered Accountant while building real-world tools at the intersection of finance and technology.</p>
-            <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed mb-3">Having cleared the <strong class="text-cyan-400 dark:text-cyan-600">CA Foundation exam (Dec 2023)</strong>, I’m now deep in CA Intermediate preparation — running a structured high-intensity revision system built around Pareto analysis, speed learning, and zero-distraction focus blocks.</p>
+            <p class="text-sm text-slate-300 dark:text-gray-600 leading-relaxed mb-3">I'm a <strong class="text-slate-100 dark:text-gray-900">BCom (Hons) student at Bhawanipur Education Society College</strong> and a <strong class="text-slate-100 dark:text-gray-900">CA Intermediate candidate</strong> — on a focused mission to become a Chartered Accountant while building real-world tools at the intersection of finance and technology.</p>
+            <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed mb-3">Having cleared the <strong class="text-cyan-400 dark:text-cyan-600">CA Foundation exam (Dec 2023)</strong>, I'm now deep in CA Intermediate preparation — running a structured high-intensity revision system built around Pareto analysis, speed learning, and zero-distraction focus blocks.</p>
             <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed">Outside the books, I build web tools, analyse markets using SMC/ICT methodology, automate workflows in Excel, and train 6 days a week. My edge is the ability to bridge analytical rigour with practical execution.</p>
           </div>
 
-          <!-- Experience Timeline -->
           <div class="card p-6">
             <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-5">Experience</p>
             <div class="relative pl-8">
@@ -204,7 +197,6 @@
             </div>
           </div>
 
-          <!-- Education -->
           <div class="card p-6">
             <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-4">Education</p>
             <div class="flex flex-col gap-4">
@@ -225,7 +217,6 @@
             </div>
           </div>
 
-          <!-- Skills -->
           <div class="card p-6">
             <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-4">Skills & Expertise</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-5">
@@ -251,7 +242,6 @@
         </div>
       </div>
 
-      <!-- Footer -->
       <div class="mt-4 text-center py-3.5 px-6 rounded-2xl bg-slate-800/50 dark:bg-white border border-slate-700/30 dark:border-gray-200 text-sm text-slate-500 dark:text-gray-400">
         &copy; 2026 Arpit Agarwala. Engineered with <span class="text-red-400">&#10084;&#65039;</span>
       </div>

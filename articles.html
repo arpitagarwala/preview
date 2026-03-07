@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Articles – Arpit Agarwala | Finance, Discipline & Productivity Reads</title>
+  <title>Articles – Arpit Agarwala | Finance, Discipline &amp; Productivity Reads</title>
   <meta name="description" content="Read articles by Arpit Agarwala on personal finance, CA preparation, discipline, productivity and money mindset for students and young professionals." />
   <meta name="keywords" content="Arpit Agarwala articles, finance blog, CA preparation tips, productivity, money mindset, BCom student blog, Kolkata" />
   <meta name="author" content="Arpit Agarwala" />
@@ -34,7 +34,10 @@
   }
   </script>
 
-  <link rel="icon" type="image/png" href="assets/images/tab-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_32,h_32,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_16,h_16,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_180,h_180,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_32,h_32,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
 
   <script>
     (function () {
@@ -95,33 +98,27 @@
 
 <body class="min-h-screen bg-slate-900 text-slate-100 dark:bg-gray-50 dark:text-gray-900 transition-colors duration-300">
 
-  <!-- Back Button -->
   <div class="fixed top-3 left-3 z-50">
     <a href="index.html" class="bg-slate-700 dark:bg-white text-slate-200 dark:text-gray-700 p-1.5 rounded-full shadow-md inline-flex items-center border border-slate-600 dark:border-gray-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-lg transition-all duration-100">
       <i class="ri-arrow-left-line text-lg"></i>
     </a>
   </div>
 
-  <!-- Theme Toggle -->
   <div class="fixed top-3 right-3 z-50">
     <button onclick="toggleTheme()" class="bg-slate-700 dark:bg-white text-slate-200 dark:text-gray-700 p-1.5 rounded-full shadow-md border border-slate-600 dark:border-gray-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-lg transition-all duration-100">
       <i id="theme-icon" class="ri-sun-line text-lg"></i>
     </button>
   </div>
 
-  <!-- Main Container -->
   <div class="max-w-5xl mx-auto px-3 py-8 pt-14">
 
-    <!-- Header -->
     <div class="mb-5">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-gray-900 tracking-tight mb-1">📝 Articles</h1>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-gray-900 tracking-tight mb-1">&#x1F4DD; Articles</h1>
       <p class="text-slate-400 dark:text-gray-500 text-sm">Insights on Fintech, AI, and the Future of Finance.</p>
     </div>
 
-    <!-- Search + Filter Bar -->
     <div class="bg-slate-800 dark:bg-white rounded-xl border border-slate-700/50 dark:border-gray-200 p-3 sm:p-4 mb-5 shadow-sm">
 
-      <!-- Search Input -->
       <div class="relative mb-3">
         <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-gray-400 text-base pointer-events-none"></i>
         <input
@@ -137,11 +134,10 @@
         </button>
       </div>
 
-      <!-- Filter Pills -->
       <div class="flex flex-wrap gap-1.5 items-center">
         <span class="text-xs font-semibold text-slate-400 dark:text-gray-500 uppercase tracking-wider mr-1">Filter:</span>
         <button class="filter-pill active text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="all" onclick="setFilter(this, 'all')">All Articles</button>
-        <button class="filter-pill text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="AI & Trading" onclick="setFilter(this, 'AI & Trading')"><i class="ri-robot-line mr-1"></i>AI & Trading</button>
+        <button class="filter-pill text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="AI &amp; Trading" onclick="setFilter(this, 'AI &amp; Trading')"><i class="ri-robot-line mr-1"></i>AI &amp; Trading</button>
         <button class="filter-pill text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="DeFi" onclick="setFilter(this, 'DeFi')"><i class="ri-coin-line mr-1"></i>DeFi</button>
         <button class="filter-pill text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="Investing" onclick="setFilter(this, 'Investing')"><i class="ri-line-chart-line mr-1"></i>Investing</button>
         <button class="filter-pill text-xs font-medium px-3 py-1.5 rounded-full border border-slate-600 dark:border-gray-300 text-slate-300 dark:text-gray-600 hover:border-cyan-400 transition-all duration-150" data-category="AI" onclick="setFilter(this, 'AI')"><i class="ri-cpu-line mr-1"></i>AI</button>
@@ -150,10 +146,8 @@
       </div>
     </div>
 
-    <!-- Articles List -->
     <div id="articles-container" class="space-y-3"></div>
 
-    <!-- Empty State -->
     <div id="no-results" class="flex-col items-center justify-center py-16 text-center">
       <i class="ri-search-eye-line text-4xl text-slate-600 dark:text-gray-300 mb-3"></i>
       <h3 class="text-lg font-bold text-slate-400 dark:text-gray-500 mb-2">No articles found</h3>
@@ -162,13 +156,11 @@
               class="text-sm text-cyan-400 dark:text-cyan-600 hover:underline font-medium">Clear all filters</button>
     </div>
 
-    <!-- Footer -->
     <div class="mt-8 bg-slate-800 dark:bg-white text-slate-400 dark:text-gray-500 rounded-xl border border-slate-700/50 dark:border-gray-200 px-5 py-3 text-xs text-center shadow-sm">
       &copy; 2026 Arpit Agarwala. Engineered with <span class="text-red-400">&#10084;&#65039;</span>
     </div>
   </div>
 
-  <!-- MODAL -->
   <div id="modal-backdrop"
        class="fixed inset-0 bg-black/75 z-[100] hidden items-center justify-center p-4 overflow-y-auto modal-backdrop"
        onclick="handleBackdropClick(event)">
@@ -203,21 +195,17 @@
         summary: 'Machine learning models are now processing millions of market data points in real-time, identifying patterns that human traders miss. From sentiment analysis of news feeds to predictive models for price movements, AI is reshaping how retail and institutional investors approach the markets.',
         tags: ['Machine Learning', 'Algorithmic Trading', 'Market Analysis'],
         content: `
-          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">The landscape of algorithmic trading has undergone a seismic shift with the advent of advanced artificial intelligence and machine learning technologies. In 2026, AI-powered trading systems are no longer just tools for institutional investors—they’re reshaping how retail traders approach markets.</p>
+          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">The landscape of algorithmic trading has undergone a seismic shift with the advent of advanced artificial intelligence and machine learning technologies. In 2026, AI-powered trading systems are no longer just tools for institutional investors—they're reshaping how retail traders approach markets.</p>
           <h3 class="text-slate-100 dark:text-gray-900">The Evolution of Trading Algorithms</h3>
-          <p>Traditional trading algorithms relied on predetermined rules and technical indicators. Today’s AI systems learn from millions of data points, adapting their strategies in real-time. Machine learning models can process news sentiment, social media trends, earnings reports, and market microstructure data simultaneously, identifying patterns invisible to human analysis.</p>
+          <p>Traditional trading algorithms relied on predetermined rules and technical indicators. Today's AI systems learn from millions of data points, adapting their strategies in real-time.</p>
           <h3 class="text-slate-100 dark:text-gray-900">Sentiment Analysis at Scale</h3>
-          <p>Modern AI trading systems analyze thousands of news articles, social media posts, and analyst reports every second. Natural Language Processing (NLP) models can detect subtle sentiment shifts that precede major market movements. For Indian markets, these systems now process regional language content, capturing sentiment from vernacular news sources and social platforms.</p>
+          <p>Modern AI trading systems analyze thousands of news articles, social media posts, and analyst reports every second. NLP models can detect subtle sentiment shifts that precede major market movements.</p>
           <h3 class="text-slate-100 dark:text-gray-900">Predictive Models and Pattern Recognition</h3>
-          <p>Deep learning models have become remarkably proficient at identifying complex market patterns. These neural networks can detect order book imbalances, predict short-term price movements, and identify optimal entry and exit points with unprecedented accuracy. Retail platforms like Dhan, Zerodha, and Groww are beginning to integrate these AI capabilities into their trading interfaces.</p>
+          <p>Deep learning models have become remarkably proficient at identifying complex market patterns. Retail platforms like Dhan, Zerodha, and Groww are beginning to integrate these AI capabilities.</p>
           <h3 class="text-slate-100 dark:text-gray-900">Risk Management and Position Sizing</h3>
-          <p>AI doesn’t just identify trading opportunities—it also optimizes risk management. Modern systems calculate optimal position sizes based on volatility forecasts, portfolio correlation, and individual risk tolerance. They can automatically adjust stop-losses and take-profits based on changing market conditions.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">The Democratization of AI Trading</h3>
-          <p>What was once available only to hedge funds and institutional traders is now accessible to retail investors. Platforms are offering AI-powered trading signals, automated strategy builders, and backtesting tools. However, this democratization also means markets are becoming more efficient, making it harder to find alpha.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Challenges and Ethical Considerations</h3>
-          <p>AI trading isn’t without challenges. Model overfitting, black-box decision-making, and the potential for coordinated algorithmic behavior pose risks. Regulators like SEBI are working to establish guidelines for AI trading systems, focusing on transparency and market stability.</p>
+          <p>AI optimizes risk management by calculating optimal position sizes based on volatility forecasts, portfolio correlation, and individual risk tolerance.</p>
           <h3 class="text-slate-100 dark:text-gray-900">The Future: Human-AI Collaboration</h3>
-          <p>The most successful traders in 2026 aren’t purely algorithmic—they combine AI insights with human judgment. AI handles data processing and pattern recognition, while humans provide strategic oversight, adapt to unprecedented events, and make decisions during market anomalies.</p>
+          <p>The most successful traders combine AI insights with human judgment. AI handles data processing and pattern recognition, while humans provide strategic oversight.</p>
         `
       },
       {
@@ -232,17 +220,13 @@
         summary: 'Decentralized Finance (DeFi) protocols are no longer fringe experiments—they\'re becoming integrated into mainstream financial services. Major banks are exploring blockchain-based settlement systems, while DeFi platforms are adding regulatory compliance features.',
         tags: ['Blockchain', 'Smart Contracts', 'Banking'],
         content: `
-          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">Decentralized Finance (DeFi) is no longer an experimental fringe of the financial world. In 2026, the lines between traditional banking and decentralized systems are blurring, creating a hybrid financial ecosystem.</p>
+          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">DeFi is no longer an experimental fringe of the financial world. In 2026, the lines between traditional banking and decentralized systems are blurring.</p>
           <h3 class="text-slate-100 dark:text-gray-900">From Experimental to Mainstream</h3>
-          <p>Major banks like HDFC, ICICI, and Axis are piloting blockchain-based settlement systems. Cross-border payments that once took days now settle in minutes through blockchain rails, reducing costs by up to 80%.</p>
+          <p>Major banks like HDFC, ICICI, and Axis are piloting blockchain-based settlement systems. Cross-border payments now settle in minutes, reducing costs by up to 80%.</p>
           <h3 class="text-slate-100 dark:text-gray-900">Smart Contracts in Banking</h3>
-          <p>Smart contracts are automating lending, insurance claims, and trade finance. A home loan approval that traditionally required weeks of paperwork now executes automatically when predefined conditions are met.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Tokenization of Assets</h3>
-          <p>Real estate, bonds, and even company shares are being tokenized on blockchain networks. This tokenization enables fractional ownership, 24/7 trading, and instant settlement.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Regulatory Compliance in DeFi</h3>
-          <p>New DeFi protocols now integrate KYC/AML checks, transaction monitoring, and regulatory reporting. SEBI and RBI are working on frameworks that allow innovation while protecting consumers.</p>
+          <p>Smart contracts are automating lending, insurance claims, and trade finance. A home loan approval that traditionally required weeks now executes automatically when predefined conditions are met.</p>
           <h3 class="text-slate-100 dark:text-gray-900">The Future: A Hybrid Financial System</h3>
-          <p>The future isn’t purely decentralized or centralized—it’s hybrid. Traditional banks provide security and compliance. DeFi provides efficiency and innovation. The convergence creates infrastructure that’s more accessible and resilient than either alone.</p>
+          <p>Traditional banks provide security and compliance. DeFi provides efficiency and innovation. The convergence creates infrastructure more accessible and resilient than either alone.</p>
         `
       },
       {
@@ -254,20 +238,14 @@
         icon: 'ri-line-chart-line',
         iconGradient: 'from-green-500 to-green-600',
         readTime: 10,
-        summary: 'Systematic Investment Plans (SIPs) harness the power of compounding and rupee-cost averaging to build wealth over time. This article breaks down the mathematical principles behind SIP investing and provides practical strategies for optimizing your portfolio.',
+        summary: 'Systematic Investment Plans (SIPs) harness the power of compounding and rupee-cost averaging to build wealth over time. This article breaks down the mathematical principles behind SIP investing.',
         tags: ['SIP', 'Mutual Funds', 'Wealth Building'],
         content: `
-          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">Systematic Investment Plans (SIPs) are often called the retail investor’s secret weapon. But what makes them so powerful? The answer lies in mathematics—specifically, the principles of compounding and rupee-cost averaging.</p>
+          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">SIPs are often called the retail investor's secret weapon. The answer lies in mathematics—compounding and rupee-cost averaging.</p>
           <h3 class="text-slate-100 dark:text-gray-900">The Power of Compounding</h3>
-          <p>A monthly SIP of ₹5,000 at 12% annual returns becomes ₹11.7 lakhs after 10 years—₹6 lakhs from your contributions and ₹5.7 lakhs from compounding alone.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Rupee-Cost Averaging Explained</h3>
-          <p>When markets fall, your fixed monthly investment buys more units. When markets rise, you buy fewer units at higher values. Over time, this averages out your purchase cost.</p>
+          <p>A monthly SIP of ₹5,000 at 12% annual returns becomes ₹11.7 lakhs after 10 years—₹6 lakhs from contributions and ₹5.7 lakhs from compounding alone.</p>
           <h3 class="text-slate-100 dark:text-gray-900">The Time Factor</h3>
-          <p>Starting a ₹5,000 monthly SIP at age 25 versus 35 gives an extra 10 years of compounding. At 12% returns, that translates to an additional ₹1.2 crores by retirement at 60.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">SIP Step-Ups: Turbocharging Growth</h3>
-          <p>Increasing your SIP by 10% annually (step-up SIP) at 12% returns builds ₹60 lakhs over 15 years, compared to ₹25 lakhs without step-ups.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Optimizing Your SIP Strategy</h3>
-          <p>Start early, stay consistent, and increase contributions with income. Diversify across large-cap, mid-cap, and index funds. Most importantly, stay invested during downturns—that’s when SIPs work their magic.</p>
+          <p>Starting at 25 vs 35 gives an extra 10 years of compounding. At 12% returns, that's an additional ₹1.2 crores by retirement at 60.</p>
         `
       },
       {
@@ -279,18 +257,14 @@
         icon: 'ri-cpu-line',
         iconGradient: 'from-orange-500 to-orange-600',
         readTime: 11,
-        summary: 'ChatGPT and similar large language models are transforming customer service, financial analysis, and automated reporting in the fintech industry. Explore how generative AI is being integrated into financial platforms.',
+        summary: 'ChatGPT and similar large language models are transforming customer service, financial analysis, and automated reporting in the fintech industry.',
         tags: ['Generative AI', 'Automation', 'Customer Service'],
         content: `
-          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">Generative AI, powered by large language models like ChatGPT, Claude, and Gemini, is fundamentally transforming financial services in 2025–26.</p>
+          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">Generative AI is fundamentally transforming financial services in 2025–26.</p>
           <h3 class="text-slate-100 dark:text-gray-900">AI-Powered Customer Service</h3>
-          <p>Banks are deploying AI chatbots that understand context, remember conversation history, and provide personalized responses. HDFC Bank’s EVA and ICICI’s iPal can now resolve 80% of customer queries without human intervention.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Automated Financial Analysis</h3>
-          <p>Generative AI can analyze financial statements, market reports, and economic data in seconds, generating comprehensive investment analysis and identifying portfolio risks. What took analysts days now takes minutes.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Challenges: Accuracy and Hallucinations</h3>
-          <p>The biggest risk is “hallucinations”—confidently stated incorrect information. In finance, where accuracy is critical, financial institutions implement multiple verification layers and human oversight.</p>
+          <p>Banks are deploying AI chatbots that understand context and provide personalized responses. HDFC's EVA and ICICI's iPal now resolve 80% of queries without human intervention.</p>
           <h3 class="text-slate-100 dark:text-gray-900">The Future of Financial Advisors</h3>
-          <p>AI won’t replace financial advisors—it will augment them. Advisors equipped with AI tools can serve more clients, provide deeper analysis, and focus on relationship building.</p>
+          <p>AI won't replace advisors—it will augment them. Advisors with AI tools can serve more clients, provide deeper analysis, and focus on relationship building.</p>
         `
       },
       {
@@ -302,20 +276,14 @@
         icon: 'ri-team-line',
         iconGradient: 'from-red-500 to-red-600',
         readTime: 9,
-        summary: 'Over 10 crore Indians now actively trade in the stock market, a dramatic shift from just a decade ago. Mobile trading apps, zero-commission brokerages, and financial literacy content have democratized access to markets.',
+        summary: 'Over 10 crore Indians now actively trade in the stock market. Mobile trading apps, zero-commission brokerages, and financial literacy content have democratized access to markets.',
         tags: ['Retail Trading', 'Indian Markets', 'Democratization'],
         content: `
-          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">India’s financial markets are experiencing a seismic demographic shift. Over 10 crore (100 million) Indians now actively participate in stock markets—a number that was barely 2 crore just a decade ago.</p>
+          <p class="leading-relaxed mb-4 text-slate-300 dark:text-gray-600">India's financial markets are experiencing a seismic demographic shift. Over 10 crore Indians now participate in stock markets—up from barely 2 crore a decade ago.</p>
           <h3 class="text-slate-100 dark:text-gray-900">The Technology Catalysts</h3>
-          <p>Mobile trading apps from Zerodha, Groww, Upstox, and Angel One made market access as simple as ordering food. UPI integration enabled instant fund transfers, and video KYC eliminated friction from account opening.</p>
+          <p>Mobile trading apps from Zerodha, Groww, Upstox, and Angel One made market access as simple as ordering food. UPI integration enabled instant fund transfers.</p>
           <h3 class="text-slate-100 dark:text-gray-900">Zero-Commission Disruption</h3>
-          <p>Traditional brokers charged 0.5–1% per trade. Discount brokers brought it to flat ₹20. Now, equity delivery trades are free on most platforms—making a ₹1,000 investment viable for the first time.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Financial Literacy Explosion</h3>
-          <p>YouTube channels, Instagram finfluencers, and podcasts democratized financial education in regional languages, driving participation beyond metro areas into tier-2 and tier-3 cities.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">Changing Market Dynamics</h3>
-          <p>Retail investors now account for over 40% of daily trading volumes. Their collective behavior influences price discovery and volatility. The days of institutions dominating price action are over.</p>
-          <h3 class="text-slate-100 dark:text-gray-900">The Path Forward</h3>
-          <p>India’s retail investor base will likely double again in the next decade. This democratization of capital markets represents one of the most significant economic shifts in modern Indian history.</p>
+          <p>Discount brokers brought trading costs to flat ₹20. Now equity delivery trades are free on most platforms—making a ₹1,000 investment viable for the first time.</p>
         `
       }
     ];
