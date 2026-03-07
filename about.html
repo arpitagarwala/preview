@@ -45,18 +45,9 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
       body { font-family: 'Inter', sans-serif; }
-      .card {
-        background: rgb(17,24,39);
-        border: 1px solid rgba(255,255,255,0.06);
-        border-radius: 1.15rem;
-        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      }
-      .dark .card { background: #ffffff; border-color: rgb(229,231,235); }
-      .tl-line {
-        position: absolute; left: 1.05rem; top: 0.4rem; bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom, rgba(34,211,238,0.35), rgba(34,211,238,0.03));
-      }
+      .card { background:rgb(17,24,39); border:1px solid rgba(255,255,255,0.06); border-radius:1.15rem; transition:transform 0.18s ease,box-shadow 0.18s ease,border-color 0.18s ease; }
+      .dark .card { background:#ffffff; border-color:rgb(229,231,235); }
+      .tl-line { position:absolute; left:1.05rem; top:0.4rem; bottom:0; width:2px; background:linear-gradient(to bottom,rgba(34,211,238,0.35),rgba(34,211,238,0.03)); }
       .tl-dot { width:0.6rem; height:0.6rem; border-radius:50%; background:rgb(34,211,238); flex-shrink:0; margin-top:0.35rem; box-shadow:0 0 7px rgba(34,211,238,0.5); }
       .tl-dot-amber { background:rgb(251,191,36); box-shadow:0 0 7px rgba(251,191,36,0.45); }
       .bar-track { height:5px; border-radius:99px; background:rgba(255,255,255,0.06); overflow:hidden; }
@@ -65,7 +56,7 @@
       @keyframes growBar { to { transform:scaleX(1); } }
       .stat { background:rgba(34,211,238,0.04); border:1px solid rgba(34,211,238,0.11); border-radius:0.8rem; padding:1rem 0.75rem; text-align:center; }
       .dark .stat { background:rgba(8,145,178,0.04); border-color:rgba(8,145,178,0.11); }
-      .connect-row { display:flex; align-items:center; gap:0.75rem; padding:0.55rem 0.75rem; border-radius:0.65rem; border:1px solid transparent; transition:background 0.15s, border-color 0.15s; text-decoration:none; }
+      .connect-row { display:flex; align-items:center; gap:0.75rem; padding:0.55rem 0.75rem; border-radius:0.65rem; border:1px solid transparent; transition:background 0.15s,border-color 0.15s; text-decoration:none; }
       .connect-row:hover { background:rgba(255,255,255,0.04); border-color:rgba(34,211,238,0.2); }
       .dark .connect-row:hover { background:rgba(0,0,0,0.03); border-color:rgba(8,145,178,0.2); }
     </style>
@@ -73,21 +64,24 @@
 
   <body class="min-h-screen bg-[#080c14] dark:bg-slate-100 text-slate-100 dark:text-gray-900 transition-colors duration-300 py-10 px-4">
 
-    <!-- Theme toggle -->
-    <div class="fixed top-4 right-4 z-50">
-      <button onclick="toggleTheme()" class="w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 dark:bg-white text-slate-300 dark:text-gray-600 border border-slate-700 dark:border-gray-200 shadow-xl hover:scale-110 transition-all duration-200">
-        <i id="theme-icon" class="ri-sun-line text-xl"></i>
+    <!-- Back Button (uniform: fixed circle, top-left) -->
+    <div class="fixed top-3 left-3 z-50">
+      <a href="index.html" class="bg-slate-700 dark:bg-white text-slate-200 dark:text-gray-700 p-1.5 rounded-full shadow-md inline-flex items-center border border-slate-600 dark:border-gray-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-lg transition-all duration-100">
+        <i class="ri-arrow-left-line text-lg"></i>
+      </a>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="fixed top-3 right-3 z-50">
+      <button onclick="toggleTheme()" class="bg-slate-700 dark:bg-white text-slate-200 dark:text-gray-700 p-1.5 rounded-full shadow-md border border-slate-600 dark:border-gray-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-lg transition-all duration-100">
+        <i id="theme-icon" class="ri-sun-line text-lg"></i>
       </button>
     </div>
 
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-5xl mx-auto pt-10">
 
-      <!-- Header with uniform back button -->
+      <!-- Page heading -->
       <div class="mb-7">
-        <a href="index.html"
-           class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 dark:text-gray-500 hover:text-cyan-400 dark:hover:text-cyan-500 transition-colors duration-200 mb-5">
-          <i class="ri-arrow-left-line"></i> Back to Home
-        </a>
         <h1 class="text-3xl font-extrabold text-white dark:text-gray-900">About Me</h1>
         <p class="text-slate-400 dark:text-gray-500 text-sm mt-1">The story, the mission, the skillset.</p>
       </div>
@@ -105,12 +99,8 @@
               <h2 class="text-xl font-extrabold text-white dark:text-gray-900">Arpit Agarwala</h2>
               <p class="text-xs text-cyan-400 dark:text-cyan-600 font-semibold mt-1 mb-3 tracking-wide">BCom (Hons) · CA Intermediate</p>
               <div class="flex flex-wrap justify-center gap-1.5 mb-4">
-                <span class="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 dark:bg-cyan-50 dark:text-cyan-600 font-semibold">
-                  <i class="ri-map-pin-line"></i> Kolkata, India
-                </span>
-                <span class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 dark:bg-emerald-50 dark:text-emerald-600 font-semibold">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Available
-                </span>
+                <span class="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 dark:bg-cyan-50 dark:text-cyan-600 font-semibold"><i class="ri-map-pin-line"></i> Kolkata, India</span>
+                <span class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 dark:bg-emerald-50 dark:text-emerald-600 font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Available</span>
               </div>
               <p class="text-xs text-slate-400 dark:text-gray-500 leading-relaxed">Born in Rajasthan, raised in Assam, building in Kolkata. Bridging finance, technology and leadership.</p>
             </div>
@@ -162,16 +152,9 @@
           <!-- Bio -->
           <div class="card p-6">
             <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-gray-400 mb-3">Who I Am</p>
-            <p class="text-sm text-slate-300 dark:text-gray-600 leading-relaxed mb-3">
-              I’m a <strong class="text-slate-100 dark:text-gray-900">BCom (Hons) student at Bhawanipur Education Society College</strong> and a
-              <strong class="text-slate-100 dark:text-gray-900">CA Intermediate candidate</strong> — on a focused mission to become a Chartered Accountant while building real-world tools at the intersection of finance and technology.
-            </p>
-            <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed mb-3">
-              Having cleared the <strong class="text-cyan-400 dark:text-cyan-600">CA Foundation exam (Dec 2023)</strong>, I’m now deep in CA Intermediate preparation — running a structured high-intensity revision system built around Pareto analysis, speed learning, and zero-distraction focus blocks.
-            </p>
-            <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed">
-              Outside the books, I build web tools, analyse markets using SMC/ICT methodology, automate workflows in Excel, and train 6 days a week. My edge is the ability to bridge analytical rigour with practical execution.
-            </p>
+            <p class="text-sm text-slate-300 dark:text-gray-600 leading-relaxed mb-3">I’m a <strong class="text-slate-100 dark:text-gray-900">BCom (Hons) student at Bhawanipur Education Society College</strong> and a <strong class="text-slate-100 dark:text-gray-900">CA Intermediate candidate</strong> — on a focused mission to become a Chartered Accountant while building real-world tools at the intersection of finance and technology.</p>
+            <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed mb-3">Having cleared the <strong class="text-cyan-400 dark:text-cyan-600">CA Foundation exam (Dec 2023)</strong>, I’m now deep in CA Intermediate preparation — running a structured high-intensity revision system built around Pareto analysis, speed learning, and zero-distraction focus blocks.</p>
+            <p class="text-sm text-slate-400 dark:text-gray-500 leading-relaxed">Outside the books, I build web tools, analyse markets using SMC/ICT methodology, automate workflows in Excel, and train 6 days a week. My edge is the ability to bridge analytical rigour with practical execution.</p>
           </div>
 
           <!-- Experience Timeline -->
@@ -227,29 +210,17 @@
             <div class="flex flex-col gap-4">
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-lg bg-cyan-500/10 dark:bg-cyan-50 flex items-center justify-center shrink-0"><i class="ri-building-line text-cyan-400 dark:text-cyan-600"></i></div>
-                <div>
-                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">Chartered Accountant — CA Intermediate</p>
-                  <p class="text-xs text-cyan-400 dark:text-cyan-600 font-semibold">ICAI · 2023 – 2028</p>
-                  <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Foundation cleared Dec 2023 · Currently preparing for Intermediate</p>
-                </div>
+                <div><p class="text-sm font-bold text-slate-100 dark:text-gray-900">Chartered Accountant — CA Intermediate</p><p class="text-xs text-cyan-400 dark:text-cyan-600 font-semibold">ICAI · 2023 – 2028</p><p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Foundation cleared Dec 2023 · Currently preparing for Intermediate</p></div>
               </div>
               <div class="h-px bg-slate-700/40 dark:bg-gray-200 ml-12"></div>
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-lg bg-violet-500/10 dark:bg-violet-50 flex items-center justify-center shrink-0"><i class="ri-graduation-cap-line text-violet-400 dark:text-violet-600"></i></div>
-                <div>
-                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">BCom (Hons)</p>
-                  <p class="text-xs text-violet-400 dark:text-violet-600 font-semibold">Bhawanipur Education Society College · 2023 – 2027</p>
-                  <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Commerce · Kolkata, West Bengal</p>
-                </div>
+                <div><p class="text-sm font-bold text-slate-100 dark:text-gray-900">BCom (Hons)</p><p class="text-xs text-violet-400 dark:text-violet-600 font-semibold">Bhawanipur Education Society College · 2023 – 2027</p><p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Commerce · Kolkata, West Bengal</p></div>
               </div>
               <div class="h-px bg-slate-700/40 dark:bg-gray-200 ml-12"></div>
               <div class="flex items-start gap-3.5">
                 <div class="w-9 h-9 rounded-lg bg-amber-500/10 dark:bg-amber-50 flex items-center justify-center shrink-0"><i class="ri-book-open-line text-amber-400 dark:text-amber-600"></i></div>
-                <div>
-                  <p class="text-sm font-bold text-slate-100 dark:text-gray-900">Class XII — Commerce</p>
-                  <p class="text-xs text-amber-400 dark:text-amber-600 font-semibold">LK Singhania Education Centre · 2018 – 2023</p>
-                  <p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Rajasthan</p>
-                </div>
+                <div><p class="text-sm font-bold text-slate-100 dark:text-gray-900">Class XII — Commerce</p><p class="text-xs text-amber-400 dark:text-amber-600 font-semibold">LK Singhania Education Centre · 2018 – 2023</p><p class="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Rajasthan</p></div>
               </div>
             </div>
           </div>
@@ -289,7 +260,7 @@
     <script>
       function syncIcon() {
         document.getElementById('theme-icon').className =
-          document.documentElement.classList.contains('dark') ? 'ri-sun-line text-xl' : 'ri-moon-line text-xl';
+          document.documentElement.classList.contains('dark') ? 'ri-sun-line text-lg' : 'ri-moon-line text-lg';
       }
       syncIcon();
       function toggleTheme() {
