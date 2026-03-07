@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="assets/images/tab-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_32,h_32,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_16,h_16,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_180,h_180,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_32,h_32,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
   <title>Games – Arpit Agarwala</title>
 
   <script>
@@ -63,14 +66,12 @@
 
 <body class="min-h-screen bg-slate-900 dark:bg-gray-50 text-slate-100 dark:text-gray-900 transition-colors duration-300">
 
-  <!-- Back -->
   <div class="fixed top-3 left-3 z-50">
     <a href="index.html" class="bg-slate-700 dark:bg-white text-slate-200 dark:text-gray-700 p-1.5 rounded-full shadow-md inline-flex items-center border border-slate-600 dark:border-gray-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-lg transition-all duration-100">
       <i class="ri-arrow-left-line text-lg"></i>
     </a>
   </div>
 
-  <!-- Theme Toggle -->
   <div class="fixed top-3 right-3 z-50">
     <button onclick="toggleTheme()" class="bg-slate-700 dark:bg-white text-slate-200 dark:text-gray-700 p-1.5 rounded-full shadow-md border border-slate-600 dark:border-gray-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-lg transition-all duration-100">
       <i id="theme-icon" class="ri-sun-line text-lg"></i>
@@ -79,13 +80,11 @@
 
   <div class="max-w-5xl mx-auto px-3 py-8 pt-14">
 
-    <!-- Header -->
     <div class="mb-5">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-gray-900 tracking-tight mb-1">🎮 Games</h1>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-100 dark:text-gray-900 tracking-tight mb-1">&#x1F3AE; Games</h1>
       <p class="text-slate-400 dark:text-gray-500 text-sm max-w-xl">Fun, interactive games — classics reimagined with a fresh coat of design. Play, learn, challenge yourself.</p>
     </div>
 
-    <!-- Stats -->
     <div class="flex flex-wrap gap-3 mb-5">
       <div class="flex items-center gap-2 bg-slate-800 dark:bg-white border border-slate-700/50 dark:border-gray-200 rounded-xl px-4 py-2.5 text-sm shadow-sm">
         <i class="ri-gamepad-line text-cyan-400 dark:text-cyan-600"></i>
@@ -98,7 +97,6 @@
       </div>
     </div>
 
-    <!-- Search -->
     <div class="bg-slate-800 dark:bg-white rounded-xl border border-slate-700/50 dark:border-gray-200 p-3 sm:p-4 mb-5 shadow-sm">
       <div class="relative">
         <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-gray-400 text-base pointer-events-none"></i>
@@ -115,10 +113,8 @@
       </div>
     </div>
 
-    <!-- Grid -->
     <div id="games-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
 
-    <!-- Empty State -->
     <div id="no-results" class="flex-col items-center justify-center py-16 text-center">
       <i class="ri-search-eye-line text-4xl text-slate-600 dark:text-gray-300 mb-3"></i>
       <h3 class="text-lg font-bold text-slate-400 dark:text-gray-500 mb-2">No games found.</h3>
@@ -126,7 +122,6 @@
       <button onclick="clearSearch()" class="text-sm text-cyan-400 dark:text-cyan-600 hover:underline font-medium">Clear search</button>
     </div>
 
-    <!-- Footer -->
     <div class="mt-8 bg-slate-800 dark:bg-white text-slate-400 dark:text-gray-500 rounded-xl border border-slate-700/50 dark:border-gray-200 px-5 py-3 text-xs text-center shadow-sm">
       &copy; 2026 Arpit Agarwala. Engineered with <span class="text-red-400">&#10084;&#65039;</span>
     </div>
@@ -195,7 +190,7 @@
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br ${g.gradient} flex items-center justify-center shadow-md">
                   <i class="${g.icon} text-xl text-white"></i>
                 </div>
-                ${g.featured ? `<span class="text-xs font-bold px-2 py-0.5 rounded-full border border-cyan-500/30 dark:border-cyan-400/40 bg-cyan-900/20 dark:bg-cyan-50 flex items-center gap-1"><span class="featured-text">⭐ Featured</span></span>` : ''}
+                ${g.featured ? `<span class="text-xs font-bold px-2 py-0.5 rounded-full border border-cyan-500/30 dark:border-cyan-400/40 bg-cyan-900/20 dark:bg-cyan-50 flex items-center gap-1"><span class="featured-text">\u2B50 Featured</span></span>` : ''}
               </div>
               <h2 class="text-sm font-bold text-slate-100 dark:text-gray-900 mb-0.5">${g.title}</h2>
               <span class="text-xs text-slate-400 dark:text-gray-400 mb-2 flex items-center gap-3">

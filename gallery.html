@@ -13,7 +13,10 @@
   <meta property="og:title" content="Gallery – Arpit Agarwala" />
   <meta property="og:description" content="Photo gallery of Arpit Agarwala – moments, milestones, and memories." />
   <meta property="og:image" content="https://arpitagarwala.online/assets/images/my-miniature.png" />
-  <link rel="icon" type="image/png" href="assets/images/tab-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_32,h_32,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_16,h_16,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_180,h_180,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/dxsja3wy5/image/upload/w_32,h_32,c_fill,q_auto,f_png/v1772863840/tab-icon.png">
 
   <script>
     (function () {
@@ -32,7 +35,6 @@
   <style>
     body { font-family: 'Inter', sans-serif; }
 
-    /* ── Masonry grid ── */
     .masonry {
       columns: 1;
       column-gap: 0.875rem;
@@ -46,7 +48,6 @@
       display: block;
     }
 
-    /* ── Photo card ── */
     .photo-card {
       position: relative;
       border-radius: 1rem;
@@ -71,7 +72,6 @@
       box-shadow: 0 10px 28px rgba(0,0,0,0.1), 0 0 0 1px rgba(34,211,238,0.14);
     }
 
-    /* overlay on hover */
     .photo-card .overlay {
       position: absolute;
       inset: 0;
@@ -85,7 +85,6 @@
     }
     .photo-card:hover .overlay { opacity: 1; }
 
-    /* image inside card */
     .photo-card img {
       width: 100%;
       height: auto;
@@ -94,7 +93,6 @@
     }
     .photo-card:hover img { transform: scale(1.04); }
 
-    /* tag pill */
     .tag-pill {
       display: inline-flex;
       align-items: center;
@@ -110,7 +108,6 @@
       border: 1px solid rgba(34,211,238,0.25);
     }
 
-    /* ── Lightbox ── */
     #lightbox {
       position: fixed;
       inset: 0;
@@ -203,7 +200,6 @@
       font-size: 0.75rem;
     }
 
-    /* ── Filter pills ── */
     .filter-btn {
       font-size: 0.72rem;
       font-weight: 600;
@@ -234,7 +230,6 @@
       color: #0891b2;
     }
 
-    /* ── Shimmer skeleton ── */
     @keyframes shimmer {
       0%   { background-position: -600px 0; }
       100% { background-position:  600px 0; }
@@ -250,14 +245,12 @@
       background-size: 600px 100%;
     }
 
-    /* ── Entrance animation ── */
     @keyframes fadeUp {
       from { opacity:0; transform:translateY(16px); }
       to   { opacity:1; transform:none; }
     }
     .fade-up { animation: fadeUp 0.35s cubic-bezier(.4,0,.2,1) both; }
 
-    /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 99px; }
@@ -267,21 +260,18 @@
 
 <body class="min-h-screen bg-[#080c14] dark:bg-slate-100 text-slate-100 dark:text-gray-900 transition-colors duration-300">
 
-  <!-- Back -->
   <div class="fixed top-3 left-3 z-50">
     <a href="index.html" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800/80 dark:bg-white backdrop-blur border border-slate-700 dark:border-gray-200 text-slate-300 dark:text-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-150 shadow-lg">
       <i class="ri-arrow-left-line text-base"></i>
     </a>
   </div>
 
-  <!-- Theme Toggle -->
   <div class="fixed top-3 right-3 z-50">
     <button onclick="toggleTheme()" class="w-9 h-9 flex items-center justify-center rounded-full bg-slate-800/80 dark:bg-white backdrop-blur border border-slate-700 dark:border-gray-200 text-slate-300 dark:text-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-150 shadow-lg">
       <i id="theme-icon" class="ri-sun-line text-base"></i>
     </button>
   </div>
 
-  <!-- Lightbox -->
   <div id="lightbox" onclick="closeLightbox(event)">
     <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close"><i class="ri-close-line"></i></button>
     <img id="lightbox-img" src="" alt="" />
@@ -298,15 +288,13 @@
 
   <div class="max-w-5xl mx-auto px-4 pt-16 pb-12">
 
-    <!-- Header -->
     <div class="mb-7 fade-up">
       <div class="flex items-center gap-3 mb-1">
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">📸 Gallery</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">&#x1F4F8; Gallery</h1>
       </div>
       <p class="text-slate-400 dark:text-gray-500 text-sm max-w-lg">Moments, milestones & memories — a visual story of who I am beyond the code.</p>
     </div>
 
-    <!-- Stats bar -->
     <div class="flex gap-4 mb-6 fade-up" style="animation-delay:60ms">
       <div class="flex items-center gap-2 bg-slate-800/60 dark:bg-white border border-slate-700/50 dark:border-gray-200 rounded-xl px-4 py-2.5">
         <i class="ri-image-line text-cyan-400 dark:text-cyan-600 text-base"></i>
@@ -318,26 +306,21 @@
       </div>
     </div>
 
-    <!-- Filter pills -->
     <div id="filter-bar" class="flex flex-wrap gap-2 mb-7 fade-up" style="animation-delay:100ms"></div>
 
-    <!-- Masonry grid -->
     <div id="gallery-grid" class="masonry"></div>
 
-    <!-- Empty state -->
     <div id="empty-state" class="hidden flex-col items-center justify-center py-24 text-center">
       <i class="ri-image-2-line text-5xl text-slate-700 dark:text-gray-300 mb-4"></i>
       <p class="text-slate-400 dark:text-gray-500 text-sm font-medium">No photos in this category yet.</p>
       <button onclick="setFilter('all')" class="mt-3 text-xs text-cyan-400 dark:text-cyan-600 hover:underline font-semibold">Show all</button>
     </div>
 
-    <!-- Upload prompt banner -->
     <div id="upload-banner" class="mt-8 rounded-2xl border border-dashed border-slate-700/70 dark:border-gray-300 bg-slate-800/30 dark:bg-white/60 p-6 text-center fade-up" style="animation-delay:200ms">
       <i class="ri-cloud-upload-line text-3xl text-slate-600 dark:text-gray-400 mb-2"></i>
       <p class="text-sm text-slate-400 dark:text-gray-500 font-medium">Add your photos to <code class="text-cyan-400 dark:text-cyan-600 bg-slate-800 dark:bg-gray-100 px-1.5 py-0.5 rounded text-xs">assets/images/gallery/</code> and update the <code class="text-cyan-400 dark:text-cyan-600 bg-slate-800 dark:bg-gray-100 px-1.5 py-0.5 rounded text-xs">PHOTOS</code> array in this file.</p>
     </div>
 
-    <!-- Footer -->
     <div class="mt-10 text-center text-xs text-slate-600 dark:text-gray-400">
       &copy; 2026 Arpit Agarwala. Engineered with <span class="text-red-400">&#10084;&#65039;</span>
     </div>
@@ -345,58 +328,34 @@
   </div>
 
   <script>
-    /* ═══════════════════════════════════════════════════
-       PHOTOS ARRAY — edit this to add/update your photos
-       ═══════════════════════════════════════════════════
-       Each entry:
-         src      – path relative to site root
-         title    – short label shown on hover + lightbox
-         desc     – optional subtitle in lightbox
-         category – used for filter pills (can add any label)
-         span     – 'tall' makes the card take more height (optional)
-    ═══════════════════════════════════════════════════ */
-    const PHOTOS = [
-      // ── Placeholder demo cards shown until you add real images ──
-      // Remove these and add your own:
-      // {
-      //   src: 'assets/images/gallery/photo1.jpg',
-      //   title: 'Caption here',
-      //   desc: 'Short description',
-      //   category: 'Personal'
-      // },
-    ];
+    const PHOTOS = [];
 
-    /* ── derive unique categories ── */
     const CATS = ['all', ...new Set(PHOTOS.map(p => p.category).filter(Boolean))];
     let activeFilter = 'all';
     let lbIndex = 0;
 
-    /* ── filtered list ── */
     function filtered() {
       return activeFilter === 'all' ? PHOTOS : PHOTOS.filter(p => p.category === activeFilter);
     }
 
-    /* ── build filter bar ── */
     function buildFilters() {
       const bar = document.getElementById('filter-bar');
       bar.innerHTML = '';
       CATS.forEach(cat => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn' + (cat === activeFilter ? ' active' : '');
-        btn.textContent = cat === 'all' ? '✦ All' : cat;
+        btn.textContent = cat === 'all' ? '\u2726 All' : cat;
         btn.onclick = () => setFilter(cat);
         bar.appendChild(btn);
       });
     }
 
-    /* ── set filter + re-render ── */
     function setFilter(cat) {
       activeFilter = cat;
       buildFilters();
       renderGallery();
     }
 
-    /* ── render masonry grid ── */
     function renderGallery() {
       const grid = document.getElementById('gallery-grid');
       const empty = document.getElementById('empty-state');
@@ -436,12 +395,7 @@
 
         item.innerHTML = `
           <div class="photo-card" onclick="openLightbox(${PHOTOS.indexOf(photo)})">
-            <img
-              src="${photo.src}"
-              alt="${photo.title || 'Photo'}"
-              loading="lazy"
-              onload="this.parentElement.classList.add('loaded')"
-            />
+            <img src="${photo.src}" alt="${photo.title || 'Photo'}" loading="lazy" />
             <div class="overlay">
               ${photo.category ? `<span class="tag-pill mb-1.5"><i class="ri-price-tag-3-line"></i> ${photo.category}</span>` : ''}
               ${photo.title ? `<p class="text-sm font-bold text-white leading-tight">${photo.title}</p>` : ''}
@@ -453,7 +407,6 @@
       });
     }
 
-    /* ── skeleton placeholders while waiting for real photos ── */
     function renderSkeletons(grid) {
       const heights = [220, 310, 260, 350, 200, 280, 240, 320, 190, 270, 300, 230];
       heights.forEach((h, i) => {
@@ -465,7 +418,6 @@
       });
     }
 
-    /* ── lightbox ── */
     function openLightbox(index) {
       lbIndex = index;
       updateLightbox();
@@ -480,7 +432,6 @@
     function lbNav(dir) {
       const list = filtered();
       lbIndex = (lbIndex + dir + list.length) % list.length;
-      // map back to PHOTOS index if filtered
       const photo = list[lbIndex];
       updateLightboxPhoto(photo, lbIndex, list.length);
     }
@@ -502,7 +453,6 @@
       document.getElementById('lightbox-caption').textContent = (idx + 1) + ' / ' + total;
     }
 
-    /* ── keyboard nav ── */
     document.addEventListener('keydown', e => {
       const lb = document.getElementById('lightbox');
       if (!lb.classList.contains('open')) return;
@@ -511,7 +461,6 @@
       if (e.key === 'ArrowRight')  lbNav(1);
     });
 
-    /* ── theme ── */
     function syncIcon() {
       document.getElementById('theme-icon').className =
         document.documentElement.classList.contains('dark') ? 'ri-sun-line text-base' : 'ri-moon-line text-base';
@@ -523,7 +472,6 @@
       syncIcon();
     }
 
-    /* ── init ── */
     buildFilters();
     renderGallery();
   </script>
