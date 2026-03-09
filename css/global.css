@@ -1,0 +1,864 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ─────────────────────────────────────────
+   BASE
+───────────────────────────────────────── */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─────────────────────────────────────────
+   SCROLLBAR  (global)
+───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 99px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ─────────────────────────────────────────
+   CARD  (index.html)
+   No prefix = light: white card
+   .dark     = dark: navy card
+───────────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: 1.15rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.dark .card {
+  background: rgb(17, 24, 39);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+a.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(34, 211, 238, 0.12);
+}
+
+.dark a.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(34, 211, 238, 0.07);
+}
+
+/* ─────────────────────────────────────────
+   NAV LINK  (index.html)
+───────────────────────────────────────── */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(8, 145, 178, 0.2);
+}
+
+.dark .nav-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(34, 211, 238, 0.2);
+}
+
+.nav-link:hover .nav-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.nav-arrow {
+  opacity: 0;
+  transition: opacity 0.15s, transform 0.15s;
+  margin-left: auto;
+}
+
+.nav-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.05rem;
+}
+
+/* ─────────────────────────────────────────
+   PROJECT / GAME CARD ENTRANCE  (projects.html, games.html)
+   .project-card and .game-card share the same animation
+───────────────────────────────────────── */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.project-card,
+.game-card {
+  animation: cardIn 0.28s ease both;
+}
+
+/* Clickable card link */
+.card-link {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-3px);
+}
+
+/* ─────────────────────────────────────────
+   FILTER PILLS  (projects.html, articles.html)
+   No prefix = light theme active pill
+   .dark     = dark theme active pill
+   Using !important to override Tailwind utility classes
+───────────────────────────────────────── */
+html .filter-pill.active {
+  background-color: #0891b2;
+  color: #ffffff;
+  border-color: #0891b2;
+}
+
+html.dark .filter-pill.active {
+  background-color: #22d3ee;
+  color: #0f172a;
+  border-color: #22d3ee;
+}
+
+/* ─────────────────────────────────────────
+   SEARCH INPUT  (projects.html, games.html, articles.html)
+   No prefix = light theme focus ring
+   .dark     = dark theme focus ring
+───────────────────────────────────────── */
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.2);
+  border-color: #0891b2;
+}
+
+.dark .search-input:focus {
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.18);
+  border-color: #22d3ee;
+}
+
+/* ─────────────────────────────────────────
+   FEATURED SHIMMER TEXT  (projects.html, games.html)
+───────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.featured-text {
+  background: linear-gradient(90deg, #22d3ee 0%, #a5f3fc 40%, #22d3ee 70%, #0891b2 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────
+   COMPLEXITY / DIFFICULTY DOTS  (projects.html, games.html)
+   dot-on  = filled (cyan)
+   dot-off = unfilled; light: gray-200, dark: slate-700
+───────────────────────────────────────── */
+.dot-on {
+  background-color: #22d3ee;
+}
+
+.dot-off {
+  background-color: #e5e7eb;
+}
+
+.dark .dot-off {
+  background-color: #334155;
+}
+
+/* ─────────────────────────────────────────
+   EMPTY STATE  (projects.html, games.html, gallery.html, articles.html)
+   Using !important to ensure it overrides Tailwind classes
+───────────────────────────────────────── */
+#no-results {
+  display: none !important;
+}
+
+#no-results.visible {
+  display: flex !important;
+}
+
+/* ─────────────────────────────────────────
+   ACHIEVEMENT CARD  (achievements.html)
+   Separate from .card: 1rem radius, overflow:hidden for photo
+   No prefix = light: white card
+   .dark     = dark: navy card
+───────────────────────────────────────── */
+.ach-card {
+  background: #ffffff;
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.dark .ach-card {
+  background: rgb(17, 24, 39);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.ach-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dark .ach-card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+  border-color: rgba(8, 145, 178, 0.25);
+}
+
+/* Card top photo */
+.card-photo {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ─────────────────────────────────────────
+   STAT TILES  (achievements.html)
+   No prefix = light theme
+   .dark     = dark theme
+───────────────────────────────────────── */
+.stat {
+  background: rgba(8, 145, 178, 0.04);
+  border: 1px solid rgba(8, 145, 178, 0.11);
+  border-radius: 0.8rem;
+  padding: 1rem 0.75rem;
+  text-align: center;
+}
+
+.dark .stat {
+  background: rgba(34, 211, 238, 0.04);
+  border-color: rgba(34, 211, 238, 0.11);
+}
+
+/* ─────────────────────────────────────────
+   FADE UP ANIMATION  (achievements.html, gallery.html)
+───────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.fade-up {
+  animation: fadeUp 0.35s ease both;
+}
+
+/* ─────────────────────────────────────────
+   TRADING CARD  (achievements.html)
+   Has a cyan border by default; separate from .ach-card
+   No prefix = light theme
+   .dark     = dark theme
+───────────────────────────────────────── */
+.trading-card {
+  background: #ffffff;
+  border: 1px solid rgba(8, 145, 178, 0.18);
+  border-radius: 1rem;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.dark .trading-card {
+  background: rgb(17, 24, 39);
+  border-color: rgba(34, 211, 238, 0.18);
+}
+
+.trading-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(8, 145, 178, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dark .trading-card:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* ─────────────────────────────────────────
+   EQUITY CHART  (achievements.html)
+───────────────────────────────────────── */
+#chart-wrap {
+  position: relative;
+  border-radius: 0.5rem;
+  cursor: crosshair;
+}
+
+#equity-canvas {
+  display: block;
+  width: 100%;
+  height: 90px;
+  border-radius: 0.5rem;
+}
+
+#chart-tip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(8, 145, 178, 0.3);
+  border-radius: 0.45rem;
+  padding: 6px 10px;
+  font-size: 10px;
+  line-height: 1.65;
+  white-space: nowrap;
+  color: #1e293b;
+  display: none;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dark #chart-tip {
+  background: rgba(15, 23, 42, 0.95);
+  color: #e2e8f0;
+  border-color: rgba(34, 211, 238, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ─────────────────────────────────────────
+   EXTERNAL LINK PILL  (achievements.html)
+───────────────────────────────────────── */
+.ext-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  transition: opacity 0.15s;
+  text-decoration: none;
+}
+
+.ext-link:hover {
+  opacity: 0.75;
+}
+
+/* ─────────────────────────────────────────
+   GALLERY MASONRY LAYOUT  (gallery.html)
+───────────────────────────────────────── */
+.masonry {
+  columns: 1;
+  column-gap: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 0.875rem;
+  display: block;
+}
+
+/* ─────────────────────────────────────────
+   PHOTO CARD  (gallery.html)
+   Unique design with scale on hover
+   No prefix = light: white card
+   .dark     = dark: navy card
+───────────────────────────────────────── */
+.photo-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgb(229, 231, 235);
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.22s ease;
+}
+
+.dark .photo-card {
+  background: rgb(17, 24, 39);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.photo-card:hover {
+  transform: translateY(-3px) scale(1.012);
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(34, 211, 238, 0.14);
+}
+
+.dark .photo-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(34, 211, 238, 0.08);
+}
+
+.photo-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.photo-card:hover .overlay {
+  opacity: 1;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-card:hover img {
+  transform: scale(1.04);
+}
+
+/* ─────────────────────────────────────────
+   TAG PILL  (gallery.html)
+   Gallery-specific tag design
+───────────────────────────────────────── */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  background: rgba(34, 211, 238, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+}
+
+/* ─────────────────────────────────────────
+   LIGHTBOX  (gallery.html)
+───────────────────────────────────────── */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(4, 8, 16, 0.94);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  padding: 1.5rem;
+}
+
+#lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#lightbox-img {
+  max-width: min(860px, 92vw);
+  max-height: 80vh;
+  border-radius: 1rem;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8);
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+  font-size: 1.1rem;
+}
+
+#lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+
+#lightbox-nav {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lb-nav-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.lb-nav-btn:hover {
+  background: rgba(34, 211, 238, 0.18);
+  color: #22d3ee;
+}
+
+#lightbox-caption {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-align: center;
+  min-width: 120px;
+}
+
+#lightbox-meta {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#lightbox-title {
+  color: #f1f5f9;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+#lightbox-sub {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+/* ─────────────────────────────────────────
+   FILTER BUTTONS  (gallery.html)
+   Similar to .filter-pill but different active state
+   No prefix = light theme
+   .dark     = dark theme
+───────────────────────────────────────── */
+.filter-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 99px;
+  border: 1px solid rgb(229, 231, 235);
+  color: #6b7280;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dark .filter-btn {
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+.filter-btn:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #22d3ee;
+}
+
+.filter-btn.active {
+  background: rgba(8, 145, 178, 0.1);
+  border-color: rgba(8, 145, 178, 0.4);
+  color: #0891b2;
+}
+
+.dark .filter-btn.active {
+  background: rgba(34, 211, 238, 0.12);
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #22d3ee;
+}
+
+/* ─────────────────────────────────────────
+   SKELETON LOADER  (gallery.html)
+───────────────────────────────────────── */
+@keyframes skeletonShimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeleton {
+  border-radius: 1rem;
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 600px 100%;
+  animation: skeletonShimmer 1.4s infinite linear;
+}
+
+.dark .skeleton {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.04) 75%);
+  background-size: 600px 100%;
+}
+
+/* ─────────────────────────────────────────
+   ARTICLE CARD  (articles.html)
+───────────────────────────────────────── */
+.article-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────
+   ARTICLE TAG  (articles.html)
+───────────────────────────────────────── */
+.article-tag {
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+/* ─────────────────────────────────────────
+   MODAL ANIMATIONS  (articles.html)
+───────────────────────────────────────── */
+.modal-backdrop {
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  animation: slideUp 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ─────────────────────────────────────────
+   MODAL BODY STYLING  (articles.html)
+───────────────────────────────────────── */
+.modal-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.modal-body p {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.modal-body ul {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.modal-body ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.modal-body ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  font-size: 0.75rem;
+  top: 0.2rem;
+  color: #0891b2;
+}
+
+.dark .modal-body ul li::before {
+  color: #22d3ee;
+}
+
+/* Callout boxes */
+.modal-body .callout {
+  background: rgba(8, 145, 178, 0.06);
+  border-left: 3px solid #0891b2;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.85rem 1rem;
+  margin: 1.25rem 0;
+}
+
+.dark .modal-body .callout {
+  background: rgba(34, 211, 238, 0.06);
+  border-left-color: #22d3ee;
+}
+
+.modal-body .callout-warning {
+  background: rgba(217, 119, 6, 0.06);
+  border-left-color: #d97706;
+}
+
+.dark .modal-body .callout-warning {
+  background: rgba(251, 191, 36, 0.07);
+  border-left-color: #fbbf24;
+}
+
+.modal-body .callout-danger {
+  background: rgba(220, 38, 38, 0.05);
+  border-left-color: #dc2626;
+}
+
+.dark .modal-body .callout-danger {
+  background: rgba(239, 68, 68, 0.06);
+  border-left-color: #ef4444;
+}
+
+/* Verdict box */
+.modal-body .verdict-box {
+  background: rgba(8, 145, 178, 0.05);
+  border: 1px solid rgba(8, 145, 178, 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem 1.15rem;
+  margin: 1.25rem 0;
+}
+
+.dark .modal-body .verdict-box {
+  background: rgba(34, 211, 238, 0.05);
+  border-color: rgba(34, 211, 238, 0.2);
+}
+
+/* Section divider */
+.modal-body .section-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.07);
+  margin: 1.5rem 0;
+}
+
+.dark .modal-body .section-divider {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Timeline */
+.modal-body .timeline-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.modal-body .timeline-dot {
+  flex-shrink: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: #0891b2;
+  margin-top: 0.4rem;
+}
+
+.dark .modal-body .timeline-dot {
+  background: #22d3ee;
+}
+
+/* Two column layout */
+.modal-body .two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+@media (max-width: 560px) {
+  .modal-body .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal-body .col-box {
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+}
+
+.modal-body .col-box-green {
+  background: rgba(22, 163, 74, 0.05);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.dark .modal-body .col-box-green {
+  background: rgba(34, 197, 94, 0.07);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.modal-body .col-box-red {
+  background: rgba(220, 38, 38, 0.05);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.dark .modal-body .col-box-red {
+  background: rgba(239, 68, 68, 0.07);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Modal scrollbar */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.dark .modal-scroll::-webkit-scrollbar-thumb {
+  background: #334155;
+}
